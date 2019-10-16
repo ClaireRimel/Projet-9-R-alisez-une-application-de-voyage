@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-126" y="-251"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="MYy-xz-Ceh">
             <objects>
-                <viewController id="wxX-VS-gL6" sceneMemberID="viewController">
+                <viewController id="wxX-VS-gL6" customClass="WeatherViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24u-eS-Aml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-125" y="-932"/>
         </scene>
-        <!--View Controller-->
+        <!--Exchange View Controller-->
         <scene sceneID="TqF-bl-sa5">
             <objects>
-                <viewController id="qjX-FI-cz0" sceneMemberID="viewController">
+                <viewController id="qjX-FI-cz0" customClass="ExchangeViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eg8-eh-tqT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="-126" y="469"/>
         </scene>
-        <!--View Controller-->
+        <!--Translate View Controller-->
         <scene sceneID="Eoc-FD-gWZ">
             <objects>
-                <viewController id="X2k-X9-WJA" sceneMemberID="viewController">
+                <viewController id="X2k-X9-WJA" customClass="TranslateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fHa-Ot-ysl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
