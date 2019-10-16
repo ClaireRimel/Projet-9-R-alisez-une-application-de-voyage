@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ0-9h-D1C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -7,20 +7,128 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="CF7-9v-IBc">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LeBaluchon" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tabBarController id="GQ0-9h-D1C" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l8P-Jx-jfC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7Pd-T9-9jD" kind="relationship" relationship="viewControllers" id="iMR-dd-eI1"/>
+                        <segue destination="8YQ-Gd-Uuy" kind="relationship" relationship="viewControllers" id="kjf-EV-q4P"/>
+                        <segue destination="ody-gp-Bmh" kind="relationship" relationship="viewControllers" id="5Km-jb-hN9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYQ-1f-fFA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-986" y="-251"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s8i-iU-w4V">
+            <objects>
+                <navigationController id="8YQ-Gd-Uuy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="WeatherLogo" selectedImage="WeatherLogo" id="uI7-wW-OPb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFQ-2t-3yM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wxX-VS-gL6" kind="relationship" relationship="rootViewController" id="0cZ-Zu-NEl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOq-ni-WcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="-251"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MYy-xz-Ceh">
+            <objects>
+                <viewController id="wxX-VS-gL6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="24u-eS-Aml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="GKd-vP-blf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sNR-yu-itV"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyz-RR-kUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="76"/>
+            <point key="canvasLocation" x="793" y="-251"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OWP-dP-6mo">
+            <objects>
+                <navigationController id="7Pd-T9-9jD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ExchangeLogo" selectedImage="ExchangeLogo" id="7Zi-pd-afK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ILp-qr-ABG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qjX-FI-cz0" kind="relationship" relationship="rootViewController" id="pSB-Nt-GMO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ix3-vw-MyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-125" y="-932"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TqF-bl-sa5">
+            <objects>
+                <viewController id="qjX-FI-cz0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eg8-eh-tqT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fK6-q8-Tqe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zq7-oE-Vee"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ht-vt-jRg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="-932"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E78-JL-KXd">
+            <objects>
+                <navigationController id="ody-gp-Bmh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="TraslanteLogo" selectedImage="TraslanteLogo" id="sWb-Lt-c95"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UnJ-x5-98J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X2k-X9-WJA" kind="relationship" relationship="rootViewController" id="7hk-1q-hpq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S14-tx-1g1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="469"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Eoc-FD-gWZ">
+            <objects>
+                <viewController id="X2k-X9-WJA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fHa-Ot-ysl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="seg-Lw-9kw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iYQ-Km-UKq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SoL-BE-n2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="469"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ExchangeLogo" width="32" height="36"/>
+        <image name="TraslanteLogo" width="43" height="47"/>
+        <image name="WeatherLogo" width="44" height="33"/>
+    </resources>
 </document>
