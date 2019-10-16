@@ -14,7 +14,7 @@
 		FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7623572E13008EE59B /* Assets.xcassets */; };
 		FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */; };
 		FA8EEA8523572E13008EE59B /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */; };
-		FA8EEA9323574020008EE59B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA9223574020008EE59B /* Default-568h@2x.png */; };
+		FA8EEA9523574506008EE59B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA9423574506008EE59B /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		FA8EEA8023572E13008EE59B /* LeBaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		FA8EEA8623572E13008EE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA8EEA9223574020008EE59B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FA8EEA9423574506008EE59B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		FA8EEA6123572E10008EE59B = {
 			isa = PBXGroup;
 			children = (
-				FA8EEA9223574020008EE59B /* Default-568h@2x.png */,
+				FA8EEA9423574506008EE59B /* Default-568h@2x.png */,
 				FA8EEA6C23572E10008EE59B /* LeBaluchon */,
 				FA8EEA8323572E13008EE59B /* LeBaluchonTests */,
 				FA8EEA6B23572E10008EE59B /* Products */,
@@ -82,13 +82,13 @@
 		FA8EEA6C23572E10008EE59B /* LeBaluchon */ = {
 			isa = PBXGroup;
 			children = (
-				FA8EEA8F2357318E008EE59B /* Model */,
-				FA8EEA902357319D008EE59B /* View */,
-				FA8EEA91235731A5008EE59B /* Controller */,
 				FA8EEA6D23572E10008EE59B /* AppDelegate.swift */,
 				FA8EEA6F23572E10008EE59B /* SceneDelegate.swift */,
 				FA8EEA7623572E13008EE59B /* Assets.xcassets */,
 				FA8EEA7B23572E13008EE59B /* Info.plist */,
+				FA8EEA8F2357318E008EE59B /* Model */,
+				FA8EEA902357319D008EE59B /* View */,
+				FA8EEA91235731A5008EE59B /* Controller */,
 			);
 			path = LeBaluchon;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */,
-				FA8EEA9323574020008EE59B /* Default-568h@2x.png in Resources */,
+				FA8EEA9523574506008EE59B /* Default-568h@2x.png in Resources */,
 				FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */,
 				FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */,
 			);
@@ -392,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
-				INFOPLIST_FILE = "Realisez-une-application-de-voyage/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
-				INFOPLIST_FILE = "Realisez-une-application-de-voyage/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

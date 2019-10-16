@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Realisez-une-application-de-voyage
+//  LeBaluchon
 //
 //  Created by Claire on 16/10/2019.
 //  Copyright © 2019 Claire Sivadier. All rights reserved.
