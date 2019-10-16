@@ -79,12 +79,12 @@
 		FA8EEA6C23572E10008EE59B /* Realisez-une-application-de-voyage */ = {
 			isa = PBXGroup;
 			children = (
+				FA8EEA8F2357318E008EE59B /* Model */,
+				FA8EEA902357319D008EE59B /* View */,
+				FA8EEA91235731A5008EE59B /* Controller */,
 				FA8EEA6D23572E10008EE59B /* AppDelegate.swift */,
 				FA8EEA6F23572E10008EE59B /* SceneDelegate.swift */,
-				FA8EEA7123572E10008EE59B /* ViewController.swift */,
-				FA8EEA7323572E10008EE59B /* Main.storyboard */,
 				FA8EEA7623572E13008EE59B /* Assets.xcassets */,
-				FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */,
 				FA8EEA7B23572E13008EE59B /* Info.plist */,
 			);
 			path = "Realisez-une-application-de-voyage";
@@ -97,6 +97,30 @@
 				FA8EEA8623572E13008EE59B /* Info.plist */,
 			);
 			path = "Realisez-une-application-de-voyageTests";
+			sourceTree = "<group>";
+		};
+		FA8EEA8F2357318E008EE59B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA8EEA902357319D008EE59B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA8EEA7323572E10008EE59B /* Main.storyboard */,
+				FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA8EEA91235731A5008EE59B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA8EEA7123572E10008EE59B /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ClaireSivadier.Realisez-une-application-de-voyage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ClaireSivadier.Realisez-une-application-de-voyage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
