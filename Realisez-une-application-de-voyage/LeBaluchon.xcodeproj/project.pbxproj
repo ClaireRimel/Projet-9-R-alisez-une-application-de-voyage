@@ -15,7 +15,7 @@
 		FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */; };
 		FA8EEA8523572E13008EE59B /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */; };
 		FA8EEA9523574506008EE59B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA9423574506008EE59B /* Default-568h@2x.png */; };
-		FA8EEA9723576430008EE59B /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA9623576430008EE59B /* ExchangeViewController.swift */; };
+		FA8EEA9723576430008EE59B /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA9623576430008EE59B /* CurrencyViewController.swift */; };
 		FA8EEA9923576466008EE59B /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA9823576466008EE59B /* TranslateViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		FA8EEA8623572E13008EE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8EEA9423574506008EE59B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FA8EEA9623576430008EE59B /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		FA8EEA9623576430008EE59B /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		FA8EEA9823576466008EE59B /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8EEA7123572E10008EE59B /* WeatherViewController.swift */,
-				FA8EEA9623576430008EE59B /* ExchangeViewController.swift */,
+				FA8EEA9623576430008EE59B /* CurrencyViewController.swift */,
 				FA8EEA9823576466008EE59B /* TranslateViewController.swift */,
 			);
 			path = Controller;
@@ -236,7 +236,7 @@
 			files = (
 				FA8EEA7223572E10008EE59B /* WeatherViewController.swift in Sources */,
 				FA8EEA9923576466008EE59B /* TranslateViewController.swift in Sources */,
-				FA8EEA9723576430008EE59B /* ExchangeViewController.swift in Sources */,
+				FA8EEA9723576430008EE59B /* CurrencyViewController.swift in Sources */,
 				FA8EEA6E23572E10008EE59B /* AppDelegate.swift in Sources */,
 				FA8EEA7023572E10008EE59B /* SceneDelegate.swift in Sources */,
 			);

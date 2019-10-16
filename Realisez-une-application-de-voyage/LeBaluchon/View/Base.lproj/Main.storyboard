@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-125" y="-932"/>
         </scene>
-        <!--Exchange View Controller-->
+        <!--Currency View Controller-->
         <scene sceneID="TqF-bl-sa5">
             <objects>
-                <viewController id="qjX-FI-cz0" customClass="ExchangeViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qjX-FI-cz0" customClass="CurrencyViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eg8-eh-tqT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
