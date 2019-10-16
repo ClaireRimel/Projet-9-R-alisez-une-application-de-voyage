@@ -13,7 +13,8 @@
 		FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7323572E10008EE59B /* Main.storyboard */; };
 		FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7623572E13008EE59B /* Assets.xcassets */; };
 		FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */; };
-		FA8EEA8523572E13008EE59B /* Realisez_une_application_de_voyageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA8423572E13008EE59B /* Realisez_une_application_de_voyageTests.swift */; };
+		FA8EEA8523572E13008EE59B /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */; };
+		FA8EEA9323574020008EE59B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA9223574020008EE59B /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA8EEA6A23572E10008EE59B /* Realisez-une-application-de-voyage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realisez-une-application-de-voyage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8EEA6A23572E10008EE59B /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EEA6D23572E10008EE59B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8EEA6F23572E10008EE59B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA8EEA7123572E10008EE59B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,9 +36,10 @@
 		FA8EEA7623572E13008EE59B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8EEA7923572E13008EE59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA8EEA7B23572E13008EE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA8EEA8023572E13008EE59B /* Realisez-une-application-de-voyageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Realisez-une-application-de-voyageTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA8EEA8423572E13008EE59B /* Realisez_une_application_de_voyageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realisez_une_application_de_voyageTests.swift; sourceTree = "<group>"; };
+		FA8EEA8023572E13008EE59B /* LeBaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		FA8EEA8623572E13008EE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8EEA9223574020008EE59B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +63,9 @@
 		FA8EEA6123572E10008EE59B = {
 			isa = PBXGroup;
 			children = (
-				FA8EEA6C23572E10008EE59B /* Realisez-une-application-de-voyage */,
-				FA8EEA8323572E13008EE59B /* Realisez-une-application-de-voyageTests */,
+				FA8EEA9223574020008EE59B /* Default-568h@2x.png */,
+				FA8EEA6C23572E10008EE59B /* LeBaluchon */,
+				FA8EEA8323572E13008EE59B /* LeBaluchonTests */,
 				FA8EEA6B23572E10008EE59B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,13 +73,13 @@
 		FA8EEA6B23572E10008EE59B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA8EEA6A23572E10008EE59B /* Realisez-une-application-de-voyage.app */,
-				FA8EEA8023572E13008EE59B /* Realisez-une-application-de-voyageTests.xctest */,
+				FA8EEA6A23572E10008EE59B /* LeBaluchon.app */,
+				FA8EEA8023572E13008EE59B /* LeBaluchonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA8EEA6C23572E10008EE59B /* Realisez-une-application-de-voyage */ = {
+		FA8EEA6C23572E10008EE59B /* LeBaluchon */ = {
 			isa = PBXGroup;
 			children = (
 				FA8EEA8F2357318E008EE59B /* Model */,
@@ -87,16 +90,16 @@
 				FA8EEA7623572E13008EE59B /* Assets.xcassets */,
 				FA8EEA7B23572E13008EE59B /* Info.plist */,
 			);
-			path = "Realisez-une-application-de-voyage";
+			path = LeBaluchon;
 			sourceTree = "<group>";
 		};
-		FA8EEA8323572E13008EE59B /* Realisez-une-application-de-voyageTests */ = {
+		FA8EEA8323572E13008EE59B /* LeBaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA8EEA8423572E13008EE59B /* Realisez_une_application_de_voyageTests.swift */,
+				FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */,
 				FA8EEA8623572E13008EE59B /* Info.plist */,
 			);
-			path = "Realisez-une-application-de-voyageTests";
+			path = LeBaluchonTests;
 			sourceTree = "<group>";
 		};
 		FA8EEA8F2357318E008EE59B /* Model */ = {
@@ -126,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA8EEA6923572E10008EE59B /* Realisez-une-application-de-voyage */ = {
+		FA8EEA6923572E10008EE59B /* LeBaluchon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA8EEA8923572E13008EE59B /* Build configuration list for PBXNativeTarget "Realisez-une-application-de-voyage" */;
+			buildConfigurationList = FA8EEA8923572E13008EE59B /* Build configuration list for PBXNativeTarget "LeBaluchon" */;
 			buildPhases = (
 				FA8EEA6623572E10008EE59B /* Sources */,
 				FA8EEA6723572E10008EE59B /* Frameworks */,
@@ -138,14 +141,14 @@
 			);
 			dependencies = (
 			);
-			name = "Realisez-une-application-de-voyage";
+			name = LeBaluchon;
 			productName = "Realisez-une-application-de-voyage";
-			productReference = FA8EEA6A23572E10008EE59B /* Realisez-une-application-de-voyage.app */;
+			productReference = FA8EEA6A23572E10008EE59B /* LeBaluchon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FA8EEA7F23572E13008EE59B /* Realisez-une-application-de-voyageTests */ = {
+		FA8EEA7F23572E13008EE59B /* LeBaluchonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA8EEA8C23572E13008EE59B /* Build configuration list for PBXNativeTarget "Realisez-une-application-de-voyageTests" */;
+			buildConfigurationList = FA8EEA8C23572E13008EE59B /* Build configuration list for PBXNativeTarget "LeBaluchonTests" */;
 			buildPhases = (
 				FA8EEA7C23572E13008EE59B /* Sources */,
 				FA8EEA7D23572E13008EE59B /* Frameworks */,
@@ -156,9 +159,9 @@
 			dependencies = (
 				FA8EEA8223572E13008EE59B /* PBXTargetDependency */,
 			);
-			name = "Realisez-une-application-de-voyageTests";
+			name = LeBaluchonTests;
 			productName = "Realisez-une-application-de-voyageTests";
-			productReference = FA8EEA8023572E13008EE59B /* Realisez-une-application-de-voyageTests.xctest */;
+			productReference = FA8EEA8023572E13008EE59B /* LeBaluchonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA8EEA6523572E10008EE59B /* Build configuration list for PBXProject "Realisez-une-application-de-voyage" */;
+			buildConfigurationList = FA8EEA6523572E10008EE59B /* Build configuration list for PBXProject "LeBaluchon" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -193,8 +196,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA8EEA6923572E10008EE59B /* Realisez-une-application-de-voyage */,
-				FA8EEA7F23572E13008EE59B /* Realisez-une-application-de-voyageTests */,
+				FA8EEA6923572E10008EE59B /* LeBaluchon */,
+				FA8EEA7F23572E13008EE59B /* LeBaluchonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */,
+				FA8EEA9323574020008EE59B /* Default-568h@2x.png in Resources */,
 				FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */,
 				FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */,
 			);
@@ -234,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8EEA8523572E13008EE59B /* Realisez_une_application_de_voyageTests.swift in Sources */,
+				FA8EEA8523572E13008EE59B /* LeBaluchonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +247,7 @@
 /* Begin PBXTargetDependency section */
 		FA8EEA8223572E13008EE59B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA8EEA6923572E10008EE59B /* Realisez-une-application-de-voyage */;
+			target = FA8EEA6923572E10008EE59B /* LeBaluchon */;
 			targetProxy = FA8EEA8123572E13008EE59B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -393,8 +397,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ClaireSivadier.Realisez-une-application-de-voyage";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.LeBaluchon;
+				PRODUCT_NAME = LeBaluchon;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -411,8 +415,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ClaireSivadier.Realisez-une-application-de-voyage";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.LeBaluchon;
+				PRODUCT_NAME = LeBaluchon;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -436,7 +440,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Realisez-une-application-de-voyage.app/Realisez-une-application-de-voyage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBaluchon.app/LeBaluchon";
 			};
 			name = Debug;
 		};
@@ -458,14 +462,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Realisez-une-application-de-voyage.app/Realisez-une-application-de-voyage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBaluchon.app/LeBaluchon";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA8EEA6523572E10008EE59B /* Build configuration list for PBXProject "Realisez-une-application-de-voyage" */ = {
+		FA8EEA6523572E10008EE59B /* Build configuration list for PBXProject "LeBaluchon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA8EEA8723572E13008EE59B /* Debug */,
@@ -474,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA8EEA8923572E13008EE59B /* Build configuration list for PBXNativeTarget "Realisez-une-application-de-voyage" */ = {
+		FA8EEA8923572E13008EE59B /* Build configuration list for PBXNativeTarget "LeBaluchon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA8EEA8A23572E13008EE59B /* Debug */,
@@ -483,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA8EEA8C23572E13008EE59B /* Build configuration list for PBXNativeTarget "Realisez-une-application-de-voyageTests" */ = {
+		FA8EEA8C23572E13008EE59B /* Build configuration list for PBXNativeTarget "LeBaluchonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA8EEA8D23572E13008EE59B /* Debug */,

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Realisez_une_application_de_voyage
+@testable import LeBaluchon
 
 class Realisez_une_application_de_voyageTests: XCTestCase {
 
