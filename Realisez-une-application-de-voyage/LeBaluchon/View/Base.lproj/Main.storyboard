@@ -50,7 +50,8 @@
                     <view key="view" contentMode="scaleToFill" id="24u-eS-Aml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="GKd-vP-blf"/>
                     </view>
                     <navigationItem key="navigationItem" id="sNR-yu-itV"/>
@@ -63,7 +64,7 @@
         <scene sceneID="OWP-dP-6mo">
             <objects>
                 <navigationController id="7Pd-T9-9jD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ExchangeLogo" selectedImage="ExchangeLogo" id="7Zi-pd-afK"/>
+                    <tabBarItem key="tabBarItem" title="" image="CurrencyLogo" selectedImage="CurrencyLogo" id="7Zi-pd-afK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ILp-qr-ABG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,14 +84,39 @@
                     <view key="view" contentMode="scaleToFill" id="Eg8-eh-tqT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
+                                <rect key="frame" x="52" y="228" width="310" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-TT-xO8">
+                                <rect key="frame" x="52" y="512" width="310" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIO-p1-lan">
+                                <rect key="frame" x="154" y="370" width="107" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.059026794180000001" green="0.26052961810000003" blue="0.39052380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="fK6-q8-Tqe"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zq7-oE-Vee"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ht-vt-jRg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-932"/>
+            <point key="canvasLocation" x="792.75362318840587" y="-932.14285714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E78-JL-KXd">
@@ -116,7 +142,7 @@
                     <view key="view" contentMode="scaleToFill" id="fHa-Ot-ysl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="seg-Lw-9kw"/>
                     </view>
                     <navigationItem key="navigationItem" id="iYQ-Km-UKq"/>
@@ -127,7 +153,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ExchangeLogo" width="32" height="36"/>
+        <image name="CurrencyLogo" width="32" height="36"/>
         <image name="TraslanteLogo" width="43" height="47"/>
         <image name="WeatherLogo" width="44" height="33"/>
     </resources>
