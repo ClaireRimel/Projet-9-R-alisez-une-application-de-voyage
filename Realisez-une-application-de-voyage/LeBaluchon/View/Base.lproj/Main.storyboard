@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ0-9h-D1C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,34 +86,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
-                                <rect key="frame" x="52" y="228" width="310" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-TT-xO8">
-                                <rect key="frame" x="52" y="512" width="310" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIO-p1-lan">
-                                <rect key="frame" x="154" y="370" width="107" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
-                                <state key="normal" title="GO">
-                                    <color key="titleColor" red="0.059026794180000001" green="0.26052961810000003" blue="0.39052380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="896" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-u3-iVm">
+                                <rect key="frame" x="20" y="231" width="374" height="436"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIO-p1-lan">
+                                        <rect key="frame" x="0.0" y="195" width="374" height="55"/>
+                                        <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
+                                        <state key="normal" title="GO">
+                                            <color key="titleColor" red="0.059026794180000001" green="0.26052961810000003" blue="0.39052380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedGoButton:" destination="qjX-FI-cz0" eventType="touchUpInside" id="u88-mk-7nP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-TT-xO8">
+                                        <rect key="frame" x="0.0" y="397.5" width="374" height="38.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="okB-5A-sam">
+                                <rect key="frame" x="20" y="428" width="374" height="40"/>
+                                <color key="color" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="sTt-u3-iVm" firstAttribute="top" secondItem="fK6-q8-Tqe" secondAttribute="top" constant="143" id="Bi0-1D-wXr"/>
+                            <constraint firstItem="fK6-q8-Tqe" firstAttribute="bottom" secondItem="sTt-u3-iVm" secondAttribute="bottom" constant="146" id="DBm-J4-aDI"/>
+                            <constraint firstItem="okB-5A-sam" firstAttribute="centerX" secondItem="Eg8-eh-tqT" secondAttribute="centerX" id="Gta-Kj-pxS"/>
+                            <constraint firstItem="sTt-u3-iVm" firstAttribute="leading" secondItem="okB-5A-sam" secondAttribute="leading" id="VLY-pC-rBg"/>
+                            <constraint firstItem="okB-5A-sam" firstAttribute="centerY" secondItem="Eg8-eh-tqT" secondAttribute="centerY" id="jPR-yO-ddJ"/>
+                            <constraint firstItem="sTt-u3-iVm" firstAttribute="leading" secondItem="Eg8-eh-tqT" secondAttribute="leadingMargin" id="v5W-LD-CYd"/>
+                            <constraint firstItem="sTt-u3-iVm" firstAttribute="trailing" secondItem="okB-5A-sam" secondAttribute="trailing" id="yWa-oo-FA7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fK6-q8-Tqe"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zq7-oE-Vee"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="okB-5A-sam" id="gZg-c3-L96"/>
+                        <outlet property="amountExchanged" destination="bzH-TT-xO8" id="uHE-nC-TCg"/>
+                        <outlet property="amountToExchange" destination="vv0-wV-fGR" id="n3t-6s-Nm8"/>
+                        <outlet property="goButton" destination="rIO-p1-lan" id="5vI-8x-RQL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ht-vt-jRg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
