@@ -13,6 +13,7 @@ enum CurrencyConverterError: Error {
     case requestError(Error)
     case invalidResponseFormat
     case usdRateNotFound
+    case invalidInput
 }
 
 extension CurrencyConverterError {
@@ -24,6 +25,8 @@ extension CurrencyConverterError {
             return "Le format de réponse du serveur est invalide "
         case .usdRateNotFound:
             return "La devise USD n'est pas disponible"
+        case .invalidInput:
+            return "Entrez un montant valide"
         }
     }
 }

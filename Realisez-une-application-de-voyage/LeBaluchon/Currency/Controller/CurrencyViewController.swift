@@ -28,13 +28,12 @@ class CurrencyViewController: UIViewController {
 
         view.endEditing(true)
             
-        guard let text = amountToExchange.text,
-            let value = Double(text)
+        guard let text = amountToExchange.text
             else {
                 return
         }
         
-        converter.convert(from: value) { (result) in
+        converter.convert(from: text) { (result) in
              self.toggleActivityIndicator(shown: false)
             print(result)
             
