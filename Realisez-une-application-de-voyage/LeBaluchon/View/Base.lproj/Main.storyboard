@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ0-9h-D1C">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -33,7 +33,7 @@
                 <navigationController id="8YQ-Gd-Uuy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="WeatherLogo" selectedImage="WeatherLogo" id="uI7-wW-OPb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFQ-2t-3yM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -49,7 +49,7 @@
             <objects>
                 <viewController id="wxX-VS-gL6" customClass="WeatherViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24u-eS-Aml">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -67,7 +67,7 @@
                 <navigationController id="7Pd-T9-9jD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="CurrencyLogo" selectedImage="CurrencyLogo" id="7Zi-pd-afK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ILp-qr-ABG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -83,24 +83,40 @@
             <objects>
                 <viewController id="qjX-FI-cz0" customClass="CurrencyViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eg8-eh-tqT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="okB-5A-sam">
-                                <rect key="frame" x="20" y="430.5" width="374" height="40"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="okB-5A-sam">
+                                <rect key="frame" x="140" y="230" width="40" height="40"/>
                                 <color key="color" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="896" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-u3-iVm">
-                                <rect key="frame" x="20" y="138" width="374" height="625"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="896" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-u3-iVm">
+                                <rect key="frame" x="16" y="84" width="284" height="196"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="StH-ce-5X3"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-TT-xO8">
+                                        <rect key="frame" x="0.0" y="68" width="284" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="c91-aV-Uis"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIO-p1-lan">
-                                        <rect key="frame" x="0.0" y="289.5" width="374" height="55"/>
+                                        <rect key="frame" x="0.0" y="136" width="284" height="60"/>
                                         <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="flL-8W-tWt"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
                                         <state key="normal" title="GO">
                                             <color key="titleColor" red="0.059026794180000001" green="0.26052961810000003" blue="0.39052380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,25 +125,16 @@
                                             <action selector="tappedGoButton:" destination="qjX-FI-cz0" eventType="touchUpInside" id="u88-mk-7nP"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-TT-xO8">
-                                        <rect key="frame" x="0.0" y="586.5" width="374" height="38.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="sTt-u3-iVm" firstAttribute="top" secondItem="fK6-q8-Tqe" secondAttribute="top" constant="50" id="Bi0-1D-wXr"/>
-                            <constraint firstItem="fK6-q8-Tqe" firstAttribute="bottom" secondItem="sTt-u3-iVm" secondAttribute="bottom" constant="50" id="DBm-J4-aDI"/>
+                            <constraint firstItem="okB-5A-sam" firstAttribute="centerY" secondItem="rIO-p1-lan" secondAttribute="centerY" id="9FM-9p-uGz"/>
+                            <constraint firstItem="sTt-u3-iVm" firstAttribute="top" secondItem="fK6-q8-Tqe" secondAttribute="top" constant="40" id="Bi0-1D-wXr"/>
                             <constraint firstItem="okB-5A-sam" firstAttribute="centerX" secondItem="Eg8-eh-tqT" secondAttribute="centerX" id="Gta-Kj-pxS"/>
-                            <constraint firstItem="sTt-u3-iVm" firstAttribute="leading" secondItem="okB-5A-sam" secondAttribute="leading" id="VLY-pC-rBg"/>
-                            <constraint firstItem="okB-5A-sam" firstAttribute="centerY" secondItem="sTt-u3-iVm" secondAttribute="centerY" id="jPR-yO-ddJ"/>
+                            <constraint firstItem="fK6-q8-Tqe" firstAttribute="trailing" secondItem="sTt-u3-iVm" secondAttribute="trailing" constant="20" id="bd0-RZ-qQH"/>
                             <constraint firstItem="sTt-u3-iVm" firstAttribute="leading" secondItem="Eg8-eh-tqT" secondAttribute="leadingMargin" id="v5W-LD-CYd"/>
-                            <constraint firstItem="sTt-u3-iVm" firstAttribute="trailing" secondItem="okB-5A-sam" secondAttribute="trailing" id="yWa-oo-FA7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fK6-q8-Tqe"/>
                     </view>
@@ -149,7 +156,7 @@
                 <navigationController id="ody-gp-Bmh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="TranslateLogo" selectedImage="TranslateLogo" id="sWb-Lt-c95"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UnJ-x5-98J">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -165,7 +172,7 @@
             <objects>
                 <viewController id="X2k-X9-WJA" customClass="TranslateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fHa-Ot-ysl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="seg-Lw-9kw"/>

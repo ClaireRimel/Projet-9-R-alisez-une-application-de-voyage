@@ -40,7 +40,13 @@ class CurrencyViewController: UIViewController {
             switch result {
             case let .success(usdValue):
                 //TODO: Managing round numbers
-                self.amountExchanged.text = "$\(usdValue)"
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .currency
+                let usdCurrency = Locale(identifier: "en_US")
+                formatter.locale = usdCurrency
+                formatter.string(for: usdValue)
+
+                self.amountExchanged.text = formatter.string(for: usdValue)
                 
             case let .failure(error):
                 let alertVC = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
