@@ -9,13 +9,13 @@
 import UIKit
 
 class TranslateViewController: UIViewController {
-
+    
     @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var outputTextView: UITextView!
     @IBOutlet weak var goButton: UIButton!
     
     let translation = Translation()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class TranslateViewController: UIViewController {
     
     @IBAction func tappedGoButton(_ sender: Any) {
         view.endEditing(true)
-
+        
         translation.request(from: inputTextView.text) { (result) in
             print(result)
             
@@ -31,7 +31,9 @@ class TranslateViewController: UIViewController {
             case let .success(translatedText):
                 self.outputTextView.text = translatedText
             case let .failure(error):
-                break
+                let alertVC = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
             }
         }
     }
