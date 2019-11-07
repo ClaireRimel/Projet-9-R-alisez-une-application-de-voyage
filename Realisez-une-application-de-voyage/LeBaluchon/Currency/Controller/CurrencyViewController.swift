@@ -47,8 +47,6 @@ class CurrencyViewController: UIViewController {
                 formatter.numberStyle = .currency
                 let usdCurrency = Locale(identifier: "en_US")
                 formatter.locale = usdCurrency
-                formatter.string(for: usdValue)
-
                 self.amountExchanged.text = formatter.string(for: usdValue)
                 
             case let .failure(error):

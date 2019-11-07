@@ -56,13 +56,8 @@ class CurrencyConverter {
                 
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
-                //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 
                 let task = session.dataTask(with: request, completionHandler: { data, response, error in
-                    // Do something...
-                    print(data)
-                    print(response)
-                    print(error)
                     
                     if let error = error {
                         DispatchQueue.main.async {
