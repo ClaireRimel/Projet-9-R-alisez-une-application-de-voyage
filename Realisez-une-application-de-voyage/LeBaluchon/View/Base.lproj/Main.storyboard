@@ -213,6 +213,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="okB-5A-sam" firstAttribute="centerY" secondItem="rIO-p1-lan" secondAttribute="centerY" id="9FM-9p-uGz"/>
                             <constraint firstItem="sTt-u3-iVm" firstAttribute="top" secondItem="fK6-q8-Tqe" secondAttribute="top" constant="40" id="Bi0-1D-wXr"/>
@@ -221,6 +222,9 @@
                             <constraint firstItem="sTt-u3-iVm" firstAttribute="leading" secondItem="Eg8-eh-tqT" secondAttribute="leadingMargin" id="v5W-LD-CYd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fK6-q8-Tqe"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EHL-T4-fRZ" appends="YES" id="Obo-7r-Mtd"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Currency" id="Zq7-oE-Vee"/>
                     <connections>
@@ -231,6 +235,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ht-vt-jRg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EHL-T4-fRZ">
+                    <connections>
+                        <action selector="dissmissKeyboard:" destination="qjX-FI-cz0" id="bCb-HP-4Kz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="792.75362318840587" y="-932.14285714285711"/>
         </scene>

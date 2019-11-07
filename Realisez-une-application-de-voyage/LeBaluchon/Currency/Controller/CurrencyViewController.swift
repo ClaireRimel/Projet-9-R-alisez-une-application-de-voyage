@@ -18,26 +18,26 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var amountExchanged: UILabel!
     
     override func viewDidLoad() {
-          super.viewDidLoad()
+        super.viewDidLoad()
         toggleActivityIndicator(shown: false)
         
         amountToExchange.text = "1"
         tappedGoButton((Any).self)
-          // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
-
+        
         view.endEditing(true)
-            
+        
         guard let text = amountToExchange.text
             else {
                 return
         }
         
         converter.convert(from: text) { (result) in
-             self.toggleActivityIndicator(shown: false)
+            self.toggleActivityIndicator(shown: false)
             print(result)
             
             switch result {
@@ -55,6 +55,9 @@ class CurrencyViewController: UIViewController {
                 self.present(alertVC, animated: true, completion: nil)
             }
         }
+    }
+    @IBAction func dissmissKeyboard(_ sender: UITapGestureRecognizer) {
+        amountToExchange.resignFirstResponder()
     }
     
     private func toggleActivityIndicator(shown: Bool) {
