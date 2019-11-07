@@ -20,6 +20,9 @@ class CurrencyViewController: UIViewController {
     override func viewDidLoad() {
           super.viewDidLoad()
         toggleActivityIndicator(shown: false)
+        
+        amountToExchange.text = "1"
+        tappedGoButton((Any).self)
           // Do any additional setup after loading the view.
     }
     
