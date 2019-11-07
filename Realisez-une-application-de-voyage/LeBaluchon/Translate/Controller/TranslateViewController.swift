@@ -13,6 +13,8 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var outputTextView: UITextView!
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     
     let translation = Translation()
     
@@ -40,5 +42,10 @@ class TranslateViewController: UIViewController {
     
     @IBAction func dissmissKeyboard(_ sender: UITapGestureRecognizer) {
         inputTextView.resignFirstResponder()
+    }
+    
+    private func toggleActivityIndicator(shown: Bool) {
+        goButton.isHidden = shown
+        activityIndicator.isHidden = !shown
     }
 }
