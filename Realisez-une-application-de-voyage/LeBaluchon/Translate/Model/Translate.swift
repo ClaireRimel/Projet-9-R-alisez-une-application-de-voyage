@@ -10,11 +10,6 @@ import UIKit
 
 class Translation {
     
-    struct LatestTranslation {
-        var requestDate: String
-    }
-    
-    
     func request(from: String, then: @escaping (Result<String, TranslationError>) -> Void) {
         let session = URLSession.shared
         
