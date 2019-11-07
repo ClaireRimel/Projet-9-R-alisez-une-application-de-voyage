@@ -19,11 +19,15 @@ class CurrencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
+
+        amountToExchange.delegate = self
         toggleActivityIndicator(shown: false)
         
         amountToExchange.text = "1"
+        textFieldDidEndEditing(amountToExchange)
+                
         tappedGoButton((Any).self)
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {
@@ -31,23 +35,19 @@ class CurrencyViewController: UIViewController {
         
         view.endEditing(true)
         
-        guard let text = amountToExchange.text
+        guard let text = amountToExchange.text, let value = convertCurrencyToDouble(input: text, locale: Locale(identifier: "fr_FR"))
             else {
                 return
         }
-        
-        converter.convert(from: text) { (result) in
+      
+        converter.convert(from: "\(value)") { (result) in
             self.toggleActivityIndicator(shown: false)
             print(result)
             
             switch result {
             case let .success(usdValue):
-                //TODO: Managing round numbers
-                let formatter = NumberFormatter()
-                formatter.numberStyle = .currency
-                let usdCurrency = Locale(identifier: "en_US")
-                formatter.locale = usdCurrency
-                self.amountExchanged.text = formatter.string(for: usdValue)
+                let value = self.convertDoubleToCurrency(amount: usdValue, locale: Locale(identifier: "en_US"))
+                self.amountExchanged.text = value
                 
             case let .failure(error):
                 let alertVC = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
@@ -64,5 +64,28 @@ class CurrencyViewController: UIViewController {
         goButton.isHidden = shown
         activityIndicator.isHidden = !shown
     }
+    
+    func convertDoubleToCurrency(amount: Double, locale: Locale) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = locale
+        return numberFormatter.string(from: NSNumber(value: amount))!
+    }
+    
+    func convertCurrencyToDouble(input: String, locale: Locale) -> Double? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = locale
+        return numberFormatter.number(from: input)?.doubleValue
+    }
 }
 
+extension CurrencyViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text, let double = Double(text) {
+            let value = convertDoubleToCurrency(amount: double, locale: Locale(identifier: "fr_FR"))
+            textField.text = value
+        }
+    }
+}

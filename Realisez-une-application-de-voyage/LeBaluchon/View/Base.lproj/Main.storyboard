@@ -52,7 +52,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-hO-KYS">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-hO-KYS">
                                 <rect key="frame" x="188.5" y="741.5" width="37" height="37"/>
                                 <color key="color" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
