@@ -11,8 +11,6 @@ import Foundation
 enum TranslationError: Error {
     case requestError(Error)
     case invalidResponseFormat
-    case usdRateNotFound
-    case invalidInput
 }
 
 extension TranslationError {
@@ -22,10 +20,6 @@ extension TranslationError {
             return error.localizedDescription
         case .invalidResponseFormat:
             return "Le format de réponse du serveur est invalide "
-        case .usdRateNotFound:
-            return "La devise USD n'est pas disponible"
-        case .invalidInput:
-            return "Entrez un montant valide"
         }
     }
 }
