@@ -9,8 +9,6 @@
 import UIKit
 
 class Translation {
-
-//    let textToTranslate: String = "Bonjour"
     
     struct LatestTranslation {
         var requestDate: String
@@ -62,12 +60,10 @@ class Translation {
                     return
             }
             print(responseJSON)
-            responseJSON
             
             DispatchQueue.main.async {
                 then(.success(responseJSON.data.translations[0].translatedText))
             }
-
         })
         task.resume()
     }
