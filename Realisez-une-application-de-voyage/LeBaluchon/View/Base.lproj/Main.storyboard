@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ0-9h-D1C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ0-9h-D1C">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,29 +37,79 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="wxX-VS-gL6" kind="relationship" relationship="rootViewController" id="0cZ-Zu-NEl"/>
+                        <segue destination="X2k-X9-WJA" kind="relationship" relationship="rootViewController" id="bo1-Au-hWq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOq-ni-WcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126" y="-251"/>
         </scene>
-        <!--Weather-->
+        <!--Tranlation-->
         <scene sceneID="MYy-xz-Ceh">
             <objects>
-                <viewController id="wxX-VS-gL6" customClass="WeatherViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wxX-VS-gL6" customClass="TranslateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24u-eS-Aml">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-pr-ctl">
+                                <rect key="frame" x="40" y="91" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="done"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insérer le text à traduire " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-sH-mIF">
+                                <rect key="frame" x="40" y="62" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text Traduit en anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-is-Pnt">
+                                <rect key="frame" x="40" y="251" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Gh-8Cs">
+                                <rect key="frame" x="40" y="280" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5P-ED-3GT">
+                                <rect key="frame" x="40" y="435" width="240" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.059026794180000001" green="0.26052961810000003" blue="0.39052380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedGoButton:" destination="qjX-FI-cz0" eventType="touchUpInside" id="TT3-hb-MJf"/>
+                                    <action selector="tappedGoButton:" destination="wxX-VS-gL6" eventType="touchUpInside" id="W4M-jI-m0S"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="GKd-vP-blf"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Weather" id="sNR-yu-itV"/>
+                    <navigationItem key="navigationItem" title="Tranlation" id="sNR-yu-itV"/>
+                    <connections>
+                        <outlet property="goButton" destination="d5P-ED-3GT" id="0oh-9d-MDg"/>
+                        <outlet property="inputTextView" destination="AdZ-pr-ctl" id="uVl-t6-5u4"/>
+                        <outlet property="outputTextView" destination="st5-Gh-8Cs" id="pme-Bl-LqZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyz-RR-kUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-251"/>
+            <point key="canvasLocation" x="789" y="468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OWP-dP-6mo">
@@ -93,7 +143,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="896" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-u3-iVm">
                                 <rect key="frame" x="16" y="84" width="284" height="196"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="StH-ce-5X3"/>
@@ -160,28 +210,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="X2k-X9-WJA" kind="relationship" relationship="rootViewController" id="7hk-1q-hpq"/>
+                        <segue destination="wxX-VS-gL6" kind="relationship" relationship="rootViewController" id="HVT-JE-ZN2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S14-tx-1g1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126" y="469"/>
         </scene>
-        <!--Translate-->
+        <!--Weather-->
         <scene sceneID="Eoc-FD-gWZ">
             <objects>
-                <viewController id="X2k-X9-WJA" customClass="TranslateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X2k-X9-WJA" customClass="WeatherViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fHa-Ot-ysl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="seg-Lw-9kw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Translate" id="iYQ-Km-UKq"/>
+                    <navigationItem key="navigationItem" title="Weather" id="iYQ-Km-UKq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoL-BE-n2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="469"/>
+            <point key="canvasLocation" x="791" y="-251"/>
         </scene>
     </scenes>
     <resources>
