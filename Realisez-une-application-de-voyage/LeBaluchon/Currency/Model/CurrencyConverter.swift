@@ -71,11 +71,6 @@ class CurrencyConverter {
                         return
                     }
                     
-                    guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-        //                callback(false, nil)
-                        return
-                    }
-                    
                     guard let data = data,
                         let responseJSON = try? JSONDecoder().decode(LatestCurrencyResponse.self, from: data) else {
                             DispatchQueue.main.async {
