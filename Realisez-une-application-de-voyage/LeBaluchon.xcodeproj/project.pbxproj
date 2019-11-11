@@ -128,12 +128,12 @@
 		FA8EEA6C23572E10008EE59B /* LeBaluchon */ = {
 			isa = PBXGroup;
 			children = (
+				FAA37E4E2379F95D00EC0DC4 /* Weather */,
 				FA46CDE1237494CA0060828D /* Translate */,
 				FAAE3109236C8CCB00179EB6 /* Currency */,
 				FA8EEA6D23572E10008EE59B /* AppDelegate.swift */,
 				FA8EEA7B23572E13008EE59B /* Info.plist */,
 				FA8EEA902357319D008EE59B /* View */,
-				FA8EEA91235731A5008EE59B /* Controller */,
 			);
 			path = LeBaluchon;
 			sourceTree = "<group>";
@@ -167,12 +167,36 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		FA8EEA91235731A5008EE59B /* Controller */ = {
+		FAA37E4E2379F95D00EC0DC4 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FAA37E512379F97C00EC0DC4 /* Model */,
+				FAA37E502379F97500EC0DC4 /* View */,
+				FAA37E4F2379F96A00EC0DC4 /* Controller */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		FAA37E4F2379F96A00EC0DC4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FA8EEA7123572E10008EE59B /* WeatherViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAA37E502379F97500EC0DC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAA37E512379F97C00EC0DC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FAAE3109236C8CCB00179EB6 /* Currency */ = {
