@@ -35,12 +35,7 @@ class CurrencyViewController: UIViewController {
         
         view.endEditing(true)
         
-        guard let text = amountToExchange.text, let value = convertCurrencyToDouble(input: text, locale: Locale(identifier: "fr_FR"))
-            else {
-                return
-        }
-      
-        converter.convert(from: "\(value)") { (result) in
+        converter.convert(from: amountToExchange.text ?? "") { (result) in
             self.toggleActivityIndicator(shown: false)
             print(result)
             
@@ -70,13 +65,6 @@ class CurrencyViewController: UIViewController {
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = locale
         return numberFormatter.string(from: NSNumber(value: amount))!
-    }
-    
-    func convertCurrencyToDouble(input: String, locale: Locale) -> Double? {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = locale
-        return numberFormatter.number(from: input)?.doubleValue
     }
 }
 

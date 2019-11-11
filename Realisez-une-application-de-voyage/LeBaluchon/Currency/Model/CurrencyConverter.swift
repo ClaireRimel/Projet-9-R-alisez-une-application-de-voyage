@@ -19,7 +19,7 @@ class CurrencyConverter {
     
     func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
-        guard let value = Double(from)
+        guard let value = convertToDouble(from: from, locale: Locale(identifier: "fr_FR"))
             else {
                 then(.failure(.invalidInput))
                 return
@@ -103,6 +103,13 @@ class CurrencyConverter {
         format.dateFormat = "yyyy-MM-dd"
         let formattedDate = format.string(from: date)
         return formattedDate == requestDate
+    }
+    
+    func convertToDouble(from currency: String, locale: Locale) -> Double? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = locale
+        return numberFormatter.number(from: currency)?.doubleValue
     }
 }
 
