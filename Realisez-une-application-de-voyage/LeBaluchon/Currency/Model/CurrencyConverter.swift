@@ -45,7 +45,12 @@ class CurrencyConverter {
                 urlComponents.path = "/api/latest"
                 
                 //parameters
-                urlComponents.queryItems = [URLQueryItem(name: "access_key", value: "4fc6ed95e4887dca01ddb1d5efe7c924"),
+        
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "FIXER_CURRENCY_KEY") as? String else {
+                   fatalError("Missing fixer translation API Key")
+               }
+               
+                urlComponents.queryItems = [URLQueryItem(name: "access_key", value: apiKey),
                                             URLQueryItem(name: "base", value: "eur"),
                                             URLQueryItem(name: "symbols", value: "usd")]
                 

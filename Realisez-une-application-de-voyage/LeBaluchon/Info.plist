@@ -21,7 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>GOOGLE_TRANSLATION_KEY</key>
-	<string>AIzaSyBYYLumGx6Wfi0gbX-GQPXymhqDevVVHSw</string>
+	<string>AIzaSyAh6QBJVjrVwgAZUH8IsxSUc9Tscf5B0WI</string>
+	<key>FIXER_CURRENCY_KEY</key>
+	<string>4fc6ed95e4887dca01ddb1d5efe7c924</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
