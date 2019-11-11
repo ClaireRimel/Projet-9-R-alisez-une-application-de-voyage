@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>GOOGLE_TRANSLATION_KEY</key>
+	<string>AIzaSyBYYLumGx6Wfi0gbX-GQPXymhqDevVVHSw</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
