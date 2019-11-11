@@ -22,12 +22,11 @@ class Translation {
         guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_TRANSLATION_KEY") as? String else {
             fatalError("Missing google translation API Key")
         }
-            
+        
         urlComponents.queryItems = [URLQueryItem(name: "q", value: from),
                                     URLQueryItem(name: "target", value: "en"),
                                     URLQueryItem(name: "format", value: "text"),
-                                    URLQueryItem(name: "source", value: "fr"),
-            URLQueryItem(name: "key", value: apiKey)]
+                                    URLQueryItem(name: "key", value: apiKey)]
 
         
         // If this fail, it's because a programming error -> wrong URL
