@@ -10,6 +10,9 @@
 		FA46CDE6237495160060828D /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE5237495160060828D /* Translate.swift */; };
 		FA46CDE8237495510060828D /* TranslationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE7237495510060828D /* TranslationError.swift */; };
 		FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE9237495910060828D /* LatestTranslationResponse.swift */; };
+		FA6FCD3D237B120100F779D2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD3C237B120100F779D2 /* Weather.swift */; };
+		FA6FCD3F237B139C00F779D2 /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD3E237B139C00F779D2 /* WeatherError.swift */; };
+		FA6FCD41237B13F700F779D2 /* LatestWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */; };
 		FA8EEA6E23572E10008EE59B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA6D23572E10008EE59B /* AppDelegate.swift */; };
 		FA8EEA7223572E10008EE59B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA7123572E10008EE59B /* WeatherViewController.swift */; };
 		FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7323572E10008EE59B /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 		FA46CDE5237495160060828D /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		FA46CDE7237495510060828D /* TranslationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationError.swift; sourceTree = "<group>"; };
 		FA46CDE9237495910060828D /* LatestTranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTranslationResponse.swift; sourceTree = "<group>"; };
+		FA6FCD3C237B120100F779D2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		FA6FCD3E237B139C00F779D2 /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
+		FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestWeatherResponse.swift; sourceTree = "<group>"; };
 		FA8EEA6A23572E10008EE59B /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EEA6D23572E10008EE59B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8EEA7123572E10008EE59B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +201,9 @@
 		FAA37E512379F97C00EC0DC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA6FCD3C237B120100F779D2 /* Weather.swift */,
+				FA6FCD3E237B139C00F779D2 /* WeatherError.swift */,
+				FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,10 +336,13 @@
 			files = (
 				FA46CDE6237495160060828D /* Translate.swift in Sources */,
 				FA46CDE8237495510060828D /* TranslationError.swift in Sources */,
+				FA6FCD41237B13F700F779D2 /* LatestWeatherResponse.swift in Sources */,
 				FAAE3106236C8C7C00179EB6 /* CurrencyConverterError.swift in Sources */,
+				FA6FCD3D237B120100F779D2 /* Weather.swift in Sources */,
 				FA8EEA7223572E10008EE59B /* WeatherViewController.swift in Sources */,
 				FA8EEA9923576466008EE59B /* TranslateViewController.swift in Sources */,
 				FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */,
+				FA6FCD3F237B139C00F779D2 /* WeatherError.swift in Sources */,
 				FAEDCF382368983F00665B35 /* CurrencyConverter.swift in Sources */,
 				FAAE3108236C8C9700179EB6 /* LatestCurrencyResponse.swift in Sources */,
 				FA8EEA9723576430008EE59B /* CurrencyViewController.swift in Sources */,
