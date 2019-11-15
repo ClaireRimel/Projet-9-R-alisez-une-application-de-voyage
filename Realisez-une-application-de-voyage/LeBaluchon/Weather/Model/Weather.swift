@@ -10,7 +10,7 @@ import Foundation
 
 class Weather {
     
-    func request(then: @escaping (Result<LatestWeatherResponse, WeatherError>) -> Void) {
+    func request(from: String, then: @escaping (Result<LatestWeatherResponse, WeatherError>) -> Void) {
         
         let session = URLSession.shared
         
@@ -19,7 +19,7 @@ class Weather {
         urlComponents.host = "api.openweathermap.org"
         urlComponents.path = "/data/2.5/weather"
         
-        urlComponents.queryItems = [URLQueryItem(name: "q", value: "nantes,fr"),
+        urlComponents.queryItems = [URLQueryItem(name: "q", value: from),
                                     URLQueryItem(name: "mode", value: "json"),
                                     URLQueryItem(name: "lang", value: "fr"),
                                     URLQueryItem(name: "units", value: "metric"),
@@ -52,7 +52,9 @@ class Weather {
                     return
             }
             print(responseJSON)
-            then(.success(responseJSON))
+            DispatchQueue.main.async {
+                then(.success(responseJSON))
+            }
         })
         task.resume()
     }
