@@ -11,6 +11,8 @@ import Foundation
 struct LatestWeatherResponse: Codable {
     let main: MainResponse
     let weather: [DescriptionResponse]
+    let name: String
+    let dt: TimeInterval
 }
 
 struct MainResponse: Codable {
@@ -21,4 +23,9 @@ struct MainResponse: Codable {
 
 struct DescriptionResponse: Codable {
     let description: String
+}
+
+struct sunRiseAndSet: Codable {
+    let sunrise: TimeInterval
+    let sunset: TimeInterval
 }

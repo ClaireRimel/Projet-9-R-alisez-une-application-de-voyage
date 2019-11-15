@@ -35,8 +35,22 @@ class WeatherViewController: UIViewController {
         request.request(from: citySelected) { (result) in
             switch result {
             case let .success(response):
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .full
+                dateFormatter.timeStyle = .none
+                
+                let date = Date(timeIntervalSinceReferenceDate: response.dt)
+                dateFormatter.locale = Locale(identifier: "fr_FR")
+                let formattedDate = dateFormatter.string(from: date)
+                
+                print(formattedDate)
                 print(response)
-                self.responseWeatherLabel.text = response.weather[0].description
+                self.responseWeatherLabel.text = """
+                Aujourd'hui \(formattedDate), \( response.dt) il fait \(response.main.temp)ºC
+                
+                le temps est \(response.weather[0].description)
+                
+                """
             case let .failure(error):
                 let alertVC = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
                 alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
