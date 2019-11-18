@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,40 +63,40 @@
                                 <rect key="frame" x="20" y="64" width="280" height="435"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insérer le text à traduire " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-sH-mIF">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20.5" id="Mn5-rZ-WHk"/>
+                                            <constraint firstAttribute="height" constant="23" id="Mn5-rZ-WHk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" name="Jaune"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-pr-ctl">
-                                        <rect key="frame" x="0.0" y="38.5" width="280" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="41" width="280" height="125.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" keyboardType="alphabet"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Traduit en anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-is-Pnt">
-                                        <rect key="frame" x="0.0" y="184.5" width="280" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="184.5" width="280" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20.5" id="Tyk-CR-efy"/>
+                                            <constraint firstAttribute="height" constant="23" id="Tyk-CR-efy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" name="Jaune"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Gh-8Cs">
-                                        <rect key="frame" x="0.0" y="223" width="280" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="225.5" width="280" height="125.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5P-ED-3GT">
                                         <rect key="frame" x="0.0" y="369" width="280" height="66"/>
-                                        <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Jaune"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="Gj9-Wq-7ZU"/>
                                         </constraints>
@@ -114,7 +115,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BleuBackground"/>
                         <color key="tintColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -181,25 +182,26 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-wV-fGR">
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="60"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="StH-ce-5X3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="32"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-TT-xO8">
                                         <rect key="frame" x="0.0" y="68" width="284" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="c91-aV-Uis"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="32"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIO-p1-lan">
                                         <rect key="frame" x="0.0" y="136" width="284" height="60"/>
-                                        <color key="backgroundColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Jaune"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="flL-8W-tWt"/>
                                         </constraints>
@@ -214,7 +216,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BleuBackground"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="okB-5A-sam" firstAttribute="centerY" secondItem="rIO-p1-lan" secondAttribute="centerY" id="9FM-9p-uGz"/>
@@ -270,57 +272,148 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wIG-20-ja4">
-                                <rect key="frame" x="20" y="84" width="280" height="395"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-QX-DES" userLabel="Global Stack View">
+                                <rect key="frame" x="20" y="64" width="280" height="435"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5kB-lA-bzd">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="51"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="N0c-Ph-e84"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="37.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <segments>
                                             <segment title="Nantes"/>
                                             <segment title="New York"/>
                                         </segments>
-                                        <color key="selectedSegmentTintColor" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="selectedSegmentTintColor" name="Jaune"/>
                                         <connections>
                                             <action selector="citySwitched:" destination="X2k-X9-WJA" eventType="valueChanged" id="1T3-dL-Zj3"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu2-Xm-bQp" customClass="w">
-                                        <rect key="frame" x="0.0" y="100" width="280" height="295"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aujourd'hui " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUp-ev-aTb">
+                                        <rect key="frame" x="0.0" y="44.5" width="280" height="36"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="23"/>
+                                        <color key="textColor" name="Jaune"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLi-sB-tcF">
+                                        <rect key="frame" x="0.0" y="88.5" width="280" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTp-x4-d9n">
+                                        <rect key="frame" x="0.0" y="133" width="280" height="36"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3S-2Y-3Df">
+                                        <rect key="frame" x="0.0" y="177" width="280" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="23"/>
+                                        <color key="textColor" name="Jaune"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="ScX-K5-5by" userLabel="Current Temperature Stack View">
+                                        <rect key="frame" x="0.0" y="221.5" width="280" height="36.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actuelle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ts-nq-20p">
+                                                <rect key="frame" x="0.0" y="7" width="155" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                <color key="textColor" name="BleuClair"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actuelle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgQ-Wi-nWE">
+                                                <rect key="frame" x="125" y="7" width="155" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-8l-ach" userLabel="Min Temperature Stack View">
+                                        <rect key="frame" x="0.0" y="266" width="280" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCR-5r-WAU">
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="36"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                <color key="textColor" name="BleuClair"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHo-XI-quf">
+                                                <rect key="frame" x="125" y="0.0" width="155" height="36"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="V7U-Zq-ZRc" userLabel="Max Temperature Stack View">
+                                        <rect key="frame" x="0.0" y="310" width="280" height="36.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nc-bZ-6W1">
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                <color key="textColor" name="BleuClair"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or5-N6-VAO">
+                                                <rect key="frame" x="125" y="0.0" width="155" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Humidité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDQ-2c-O35">
+                                        <rect key="frame" x="0.0" y="354.5" width="280" height="36"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="23"/>
+                                        <color key="textColor" name="Jaune"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uro-KJ-Hn7">
+                                        <rect key="frame" x="0.0" y="398.5" width="280" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BleuBackground"/>
                         <constraints>
-                            <constraint firstItem="wIG-20-ja4" firstAttribute="top" secondItem="seg-Lw-9kw" secondAttribute="top" constant="40" id="blc-NV-bqO"/>
-                            <constraint firstItem="wIG-20-ja4" firstAttribute="leading" secondItem="seg-Lw-9kw" secondAttribute="leading" constant="20" id="iun-Md-Jrd"/>
-                            <constraint firstItem="seg-Lw-9kw" firstAttribute="trailing" secondItem="wIG-20-ja4" secondAttribute="trailing" constant="20" id="jGI-Oj-2KW"/>
-                            <constraint firstItem="seg-Lw-9kw" firstAttribute="bottom" secondItem="wIG-20-ja4" secondAttribute="bottom" constant="40" id="jIN-1D-kag"/>
+                            <constraint firstItem="UhY-QX-DES" firstAttribute="top" secondItem="seg-Lw-9kw" secondAttribute="top" constant="20" id="5bo-Hv-yLD"/>
+                            <constraint firstItem="seg-Lw-9kw" firstAttribute="trailing" secondItem="UhY-QX-DES" secondAttribute="trailing" constant="20" id="G3D-Kr-1OF"/>
+                            <constraint firstItem="UhY-QX-DES" firstAttribute="leading" secondItem="seg-Lw-9kw" secondAttribute="leading" constant="20" id="Xan-Ri-Xxe"/>
+                            <constraint firstItem="seg-Lw-9kw" firstAttribute="bottom" secondItem="UhY-QX-DES" secondAttribute="bottom" constant="20" id="kMD-5l-8sr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="seg-Lw-9kw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="iYQ-Km-UKq"/>
                     <connections>
                         <outlet property="citiesSegmented" destination="5kB-lA-bzd" id="ge3-Po-EQ1"/>
-                        <outlet property="responseWeatherLabel" destination="Nu2-Xm-bQp" id="eJl-YQ-VcS"/>
+                        <outlet property="currentTemperature" destination="PgQ-Wi-nWE" id="E2g-AS-uCE"/>
+                        <outlet property="date" destination="SLi-sB-tcF" id="Kqp-Y4-ty9"/>
+                        <outlet property="descriptionWeather" destination="jTp-x4-d9n" id="RTA-0Q-xOg"/>
+                        <outlet property="humidity" destination="uro-KJ-Hn7" id="dpB-g1-Xn1"/>
+                        <outlet property="maxTemperature" destination="or5-N6-VAO" id="7jj-Ry-NHB"/>
+                        <outlet property="minTemperature" destination="AHo-XI-quf" id="O4Y-R7-49O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoL-BE-n2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.85507246376812" y="-251.11607142857142"/>
+            <point key="canvasLocation" x="789.375" y="-251.40845070422534"/>
         </scene>
     </scenes>
     <resources>
         <image name="CurrencyLogo" width="22" height="24"/>
         <image name="TranslateLogo" width="29" height="31"/>
         <image name="WeatherLogo" width="29" height="22"/>
+        <namedColor name="BleuBackground">
+            <color red="0.22699999809265137" green="0.36000001430511475" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="BleuClair">
+            <color red="0.52156862745098043" green="0.81176470588235294" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Jaune">
+            <color red="0.92156862745098034" green="0.60784313725490191" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

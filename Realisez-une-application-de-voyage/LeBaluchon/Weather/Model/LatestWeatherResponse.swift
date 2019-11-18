@@ -17,15 +17,11 @@ struct LatestWeatherResponse: Codable {
 
 struct MainResponse: Codable {
     let temp: Double
-    let pressure: Int
     let humidity: Int
+    let temp_min: Double
+    let temp_max: Double
 }
 
 struct DescriptionResponse: Codable {
     let description: String
-}
-
-struct sunRiseAndSet: Codable {
-    let sunrise: TimeInterval
-    let sunset: TimeInterval
 }
