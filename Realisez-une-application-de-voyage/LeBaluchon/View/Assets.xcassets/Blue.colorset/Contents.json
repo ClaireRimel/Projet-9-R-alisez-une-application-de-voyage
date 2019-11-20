@@ -7,12 +7,12 @@
     {
       "idiom" : "iphone",
       "color" : {
-        "color-space" : "display-p3",
+        "color-space" : "extended-srgb",
         "components" : {
-          "red" : "133",
+          "red" : "23",
           "alpha" : "1.000",
-          "blue" : "213",
-          "green" : "207"
+          "blue" : "177",
+          "green" : "108"
         }
       }
     },

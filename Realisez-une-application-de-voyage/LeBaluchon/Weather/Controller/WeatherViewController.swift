@@ -64,7 +64,7 @@ class WeatherViewController: UIViewController {
                 self.humidity.text = "\(response.main.humidity)%"
 
             case let .failure(error):
-                let alertVC = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
+                let alertVC = UIAlertController(title: "Erreur", message: error.message, preferredStyle: .alert)
                 alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
                 self.present(alertVC, animated: true, completion: nil)
             }

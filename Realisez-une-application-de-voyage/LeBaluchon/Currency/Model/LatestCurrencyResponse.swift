@@ -16,13 +16,3 @@ struct LatestCurrencyResponse: Codable {
     let date: String
     let rates: [String: Double]
 }
-
-//response example:
-
-    /*
-{"success":true,
- "timestamp":1572287346,
- "base":"EUR",
- "date":"2019-10-28",
- "rates":{"USD":1.10985}}
- */
