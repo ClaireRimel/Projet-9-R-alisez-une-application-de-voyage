@@ -47,9 +47,24 @@ class CurrencyConverterTests: XCTestCase {
             // Then
             XCTAssertEqual(result, .failure(.invalidInput))
             expectation.fulfill()
-
         }
         //wait...
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    
+    func testPerformCalculationWithExistingData() {
+        // Given
+        sut.latestRateAndDate = CurrencyConverter.LatestRateAndDate(usdRate: 2.0, requestDate: "2019-11-25")
+        let input = "100,00€"
+        let expectation = self.expectation(description: "")
+
+        // When
+        sut.convert(from: input) { (result) in
+             // Then
+            XCTAssertEqual(result, .success(200))
+            expectation.fulfill()
+        }
         waitForExpectations(timeout: 1, handler: nil)
     }
 
