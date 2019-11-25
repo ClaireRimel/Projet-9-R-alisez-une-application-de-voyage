@@ -13,12 +13,12 @@
 		FA6FCD3D237B120100F779D2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD3C237B120100F779D2 /* Weather.swift */; };
 		FA6FCD3F237B139C00F779D2 /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD3E237B139C00F779D2 /* WeatherError.swift */; };
 		FA6FCD41237B13F700F779D2 /* LatestWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */; };
+		FA72B0B0238C561D00B3F9AC /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72B0AF238C561D00B3F9AC /* CurrencyConverterTests.swift */; };
 		FA8EEA6E23572E10008EE59B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA6D23572E10008EE59B /* AppDelegate.swift */; };
 		FA8EEA7223572E10008EE59B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA7123572E10008EE59B /* WeatherViewController.swift */; };
 		FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7323572E10008EE59B /* Main.storyboard */; };
 		FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7623572E13008EE59B /* Assets.xcassets */; };
 		FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */; };
-		FA8EEA8523572E13008EE59B /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */; };
 		FA8EEA9723576430008EE59B /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA9623576430008EE59B /* CurrencyViewController.swift */; };
 		FA8EEA9923576466008EE59B /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EEA9823576466008EE59B /* TranslateViewController.swift */; };
 		FAAE3106236C8C7C00179EB6 /* CurrencyConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE3105236C8C7C00179EB6 /* CurrencyConverterError.swift */; };
@@ -43,6 +43,7 @@
 		FA6FCD3C237B120100F779D2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FA6FCD3E237B139C00F779D2 /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
 		FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestWeatherResponse.swift; sourceTree = "<group>"; };
+		FA72B0AF238C561D00B3F9AC /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
 		FA8EEA6A23572E10008EE59B /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EEA6D23572E10008EE59B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8EEA7123572E10008EE59B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		FA8EEA7923572E13008EE59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA8EEA7B23572E13008EE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8EEA8023572E13008EE59B /* LeBaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		FA8EEA8623572E13008EE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8EEA9623576430008EE59B /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		FA8EEA9823576466008EE59B /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		FA8EEA8323572E13008EE59B /* LeBaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA8EEA8423572E13008EE59B /* LeBaluchonTests.swift */,
 				FA8EEA8623572E13008EE59B /* Info.plist */,
+				FA72B0AF238C561D00B3F9AC /* CurrencyConverterTests.swift */,
 			);
 			path = LeBaluchonTests;
 			sourceTree = "<group>";
@@ -286,6 +286,7 @@
 					};
 					FA8EEA7F23572E13008EE59B = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1120;
 						TestTargetID = FA8EEA6923572E10008EE59B;
 					};
 				};
@@ -354,7 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8EEA8523572E13008EE59B /* LeBaluchonTests.swift in Sources */,
+				FA72B0B0238C561D00B3F9AC /* CurrencyConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +546,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
-				INFOPLIST_FILE = "Realisez-une-application-de-voyageTests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchonTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,6 +558,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ClaireSivadier.Realisez-une-application-de-voyageTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBaluchon.app/LeBaluchon";
@@ -567,9 +570,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
-				INFOPLIST_FILE = "Realisez-une-application-de-voyageTests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchonTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
