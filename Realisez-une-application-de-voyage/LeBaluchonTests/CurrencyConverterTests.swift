@@ -12,9 +12,12 @@ import XCTest
 class CurrencyConverterTests: XCTestCase {
 
     var sut: CurrencyConverter!
+    var requestMock: RequestInterfaceMock!
+    let apiKeyMock = "1234345"
     
     override func setUp() {
-      sut = CurrencyConverter()
+        requestMock = RequestInterfaceMock()
+        sut = CurrencyConverter(session: requestMock, apiKey: apiKeyMock)
     }
 
     override func tearDown() {
@@ -52,7 +55,6 @@ class CurrencyConverterTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    
     func testPerformCalculationWithExistingData() {
         // Given
         sut.latestRateAndDate = CurrencyConverter.LatestRateAndDate(usdRate: 2.0, requestDate: "2019-11-25")
@@ -67,8 +69,41 @@ class CurrencyConverterTests: XCTestCase {
         }
         waitForExpectations(timeout: 1, handler: nil)
     }
+    
+    func testRequestsDataIfTheresNoDataAndInputIsValid() {
+        // Given
+        sut.latestRateAndDate = nil
+        let input = "100,00€"
 
+        // When
+        sut.convert(from: input) {_ in}
+        
+        //Then
+        XCTAssertEqual(self.requestMock.request?.httpMethod, "GET")
+        
+        let url = requestMock.request?.url?.absoluteString
+        let urlComponents = URLComponents(string: url!)
+        
+        XCTAssertEqual(urlComponents?.scheme, "http")
+        XCTAssertEqual(urlComponents?.host, "data.fixer.io")
+        XCTAssertEqual(urlComponents?.path, "/api/latest")
+        XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "access_key", value: apiKeyMock))
+        XCTAssertEqual(urlComponents?.queryItems?[1], URLQueryItem(name: "base", value: "eur"))
+        XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "symbols", value: "usd"))
+    }
+    
     // Given
-          // When
-          // Then
+    // When
+    // Then
+}
+
+final class RequestInterfaceMock: RequestInterface {
+    
+    var request: URLRequest?
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        self.request = request
+        
+        return URLSessionDataTask()
+    }
 }
