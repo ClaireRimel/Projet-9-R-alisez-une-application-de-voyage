@@ -21,10 +21,26 @@ class CurrencyConverterTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testInvalidInput() {
+    func testInvalidInputCharacter() {
         // Given
         let input = "A"
-        let expectation = self.expectation(description: "Scaling")
+        let expectation = self.expectation(description: "")
+        
+        // When
+        sut.convert(from: input) { (result) in
+            // Then
+            XCTAssertEqual(result, .failure(.invalidInput))
+            expectation.fulfill()
+
+        }
+        //wait...
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testInvalidInputDoubleComma() {
+        // Given
+        let input = "2.."
+        let expectation = self.expectation(description: "")
         
         // When
         sut.convert(from: input) { (result) in
