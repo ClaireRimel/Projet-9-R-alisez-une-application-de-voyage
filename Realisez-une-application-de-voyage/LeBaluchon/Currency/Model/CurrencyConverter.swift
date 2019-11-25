@@ -17,6 +17,17 @@ class CurrencyConverter {
     
     var latestRateAndDate: LatestRateAndDate?
     
+    let session: RequestInterface
+    
+    let apiKey: String
+    
+    // Default argument in function
+    init(session: RequestInterface = URLSession.shared,
+         apiKey: String = Bundle.main.object(forInfoDictionaryKey: "FIXER_CURRENCY_KEY") as! String) {
+        self.session = session
+        self.apiKey = apiKey
+    }
+    
     func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
         guard let value = convertToDouble(from: from, locale: Locale(identifier: "fr_FR"))
@@ -37,64 +48,58 @@ class CurrencyConverter {
     }
     
     func request(from: Double, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
-        let session = URLSession.shared
-                
-                var urlComponents = URLComponents()
-                urlComponents.scheme = "http"
-                urlComponents.host = "data.fixer.io"
-                urlComponents.path = "/api/latest"
-                
-                //parameters
         
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "FIXER_CURRENCY_KEY") as? String else {
-                   fatalError("Missing fixer translation API Key")
-               }
-               
-                urlComponents.queryItems = [URLQueryItem(name: "access_key", value: apiKey),
-                                            URLQueryItem(name: "base", value: "eur"),
-                                            URLQueryItem(name: "symbols", value: "usd")]
-                
-                // If this fail, it's because a programming error -> wrong URL
-                guard let url = urlComponents.url else {
-                    fatalError("Invalid URL")
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "http"
+        urlComponents.host = "data.fixer.io"
+        urlComponents.path = "/api/latest"
+        
+        //parameters
+        urlComponents.queryItems = [URLQueryItem(name: "access_key", value: apiKey),
+                                    URLQueryItem(name: "base", value: "eur"),
+                                    URLQueryItem(name: "symbols", value: "usd")]
+        
+        // If this fail, it's because a programming error -> wrong URL
+        guard let url = urlComponents.url else {
+            fatalError("Invalid URL")
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            
+            if let error = error as NSError? {
+                DispatchQueue.main.async {
+                    then(.failure(.requestError(error)))
                 }
-                
-                var request = URLRequest(url: url)
-                request.httpMethod = "GET"
-                
-                let task = session.dataTask(with: request, completionHandler: { data, response, error in
-                    
-                    if let error = error as NSError? {
-                        DispatchQueue.main.async {
-                            then(.failure(.requestError(error)))
-                        }
-                        return
-                    }
-                    
-                    guard let data = data,
-                        let responseJSON = try? JSONDecoder().decode(LatestCurrencyResponse.self, from: data) else {
-                            DispatchQueue.main.async {
-                                then(.failure(.invalidResponseFormat))
-                            }
-                            return
-                    }
-                    print(responseJSON)
-                            
-                    guard let usdRate = responseJSON.rates["USD"] else {
-                        DispatchQueue.main.async {
-                            then(.failure(.usdRateNotFound))
-                        }
-                        return
-                    }
-                    
-                    self.latestRateAndDate = LatestRateAndDate(usdRate: usdRate, requestDate: responseJSON.date)
-
-                    let usdValue = from * usdRate
+                return
+            }
+            
+            guard let data = data,
+                let responseJSON = try? JSONDecoder().decode(LatestCurrencyResponse.self, from: data) else {
                     DispatchQueue.main.async {
-                        then(.success(usdValue))
+                        then(.failure(.invalidResponseFormat))
                     }
-                })
-                task.resume()
+                    return
+            }
+            print(responseJSON)
+            
+            guard let usdRate = responseJSON.rates["USD"] else {
+                DispatchQueue.main.async {
+                    then(.failure(.usdRateNotFound))
+                }
+                return
+            }
+            
+            self.latestRateAndDate = LatestRateAndDate(usdRate: usdRate, requestDate: responseJSON.date)
+            
+            let usdValue = from * usdRate
+            DispatchQueue.main.async {
+                then(.success(usdValue))
+            }
+        })
+        task.resume()
     }
     
     func wasRequestMadeToday(requestDate: String) -> Bool {
@@ -113,7 +118,10 @@ class CurrencyConverter {
     }
 }
 
+//TODO: relocate common protocol
+protocol RequestInterface {
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
 
-
-
-
+extension URLSession: RequestInterface {}
