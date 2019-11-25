@@ -70,6 +70,40 @@ class CurrencyConverterTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
+    func testPerformCalculationWithoutExistingData() {
+        // Given
+        sut.latestRateAndDate = nil
+        let input = "100,00€"
+        let expectation = self.expectation(description: "")
+        
+        requestMock.response = LatestCurrencyResponse(success: true, timestamp: 0, base: "", date: "", rates: ["USD": 2.0])
+
+        // When
+        sut.convert(from: input) { (result) in
+             // Then
+            XCTAssertEqual(result, .success(200))
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testInvalidResponseFormat() {
+        // Given
+        sut.latestRateAndDate = nil
+        let input = "100,00€"
+        let expectation = self.expectation(description: "")
+        
+        requestMock.data = Data()
+
+        // When
+        sut.convert(from: input) { (result) in
+             // Then
+            XCTAssertEqual(result, .failure(.invalidResponseFormat))
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
     func testRequestsDataIfTheresNoDataAndInputIsValid() {
         // Given
         sut.latestRateAndDate = nil
@@ -92,6 +126,41 @@ class CurrencyConverterTests: XCTestCase {
         XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "symbols", value: "usd"))
     }
     
+    func testRequestError() {
+             // Given
+        let error = NSError(domain: "", code: 0, userInfo: nil)
+        sut.latestRateAndDate = nil
+        let input = "100,00€"
+        let expectation = self.expectation(description: "")
+        
+        requestMock.error = error
+        
+        // When
+        sut.convert(from: input) { (result) in
+            // Then
+            XCTAssertEqual(result, .failure(.requestError(error)))
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testUsdRateNotFound() {
+           // Given
+           sut.latestRateAndDate = nil
+           let input = "100,00€"
+           let expectation = self.expectation(description: "")
+           
+           requestMock.response = LatestCurrencyResponse(success: true, timestamp: 0, base: "", date: "", rates: ["": 2.0])
+
+           // When
+           sut.convert(from: input) { (result) in
+                // Then
+               XCTAssertEqual(result, .failure(.usdRateNotFound))
+               expectation.fulfill()
+           }
+           waitForExpectations(timeout: 1, handler: nil)
+       }
+    
     // Given
     // When
     // Then
@@ -100,9 +169,23 @@ class CurrencyConverterTests: XCTestCase {
 final class RequestInterfaceMock: RequestInterface {
     
     var request: URLRequest?
+            
+    var response: LatestCurrencyResponse?
     
+    var error: Error?
+    
+    var data: Data?
+
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         self.request = request
+                
+        if let response = response {
+            let data = try! JSONEncoder().encode(response)
+            completionHandler(data, nil, nil)
+            
+        } else {
+            completionHandler(data, nil, error)
+        }
         
         return URLSessionDataTask()
     }
