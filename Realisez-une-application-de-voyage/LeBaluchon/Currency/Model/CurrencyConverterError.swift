@@ -9,8 +9,8 @@
 import Foundation
 
 //typed errors
-enum CurrencyConverterError: Error {
-    case requestError(Error)
+enum CurrencyConverterError: Error, Equatable {
+    case requestError(NSError)
     case invalidResponseFormat
     case usdRateNotFound
     case invalidInput

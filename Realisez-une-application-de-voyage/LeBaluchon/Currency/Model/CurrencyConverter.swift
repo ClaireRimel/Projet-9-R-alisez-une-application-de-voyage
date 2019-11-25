@@ -64,7 +64,7 @@ class CurrencyConverter {
                 
                 let task = session.dataTask(with: request, completionHandler: { data, response, error in
                     
-                    if let error = error {
+                    if let error = error as NSError? {
                         DispatchQueue.main.async {
                             then(.failure(.requestError(error)))
                         }
