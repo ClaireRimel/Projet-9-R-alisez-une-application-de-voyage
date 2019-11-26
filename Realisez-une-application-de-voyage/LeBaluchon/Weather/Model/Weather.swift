@@ -10,10 +10,19 @@ import Foundation
 
 class Weather {
     
+    let session: RequestInterface
+    
+    let apiKey: String
+    
+    // Default argument in function
+    init(session: RequestInterface = URLSession.shared,
+         apiKey: String = Bundle.main.object(forInfoDictionaryKey: "OPENWEATHERMAP_WEATHER_KEY") as! String) {
+        self.session = session
+        self.apiKey = apiKey
+    }
+    
     func request(from: String, then: @escaping (Result<LatestWeatherResponse, WeatherError>) -> Void) {
-        
-        let session = URLSession.shared
-        
+                
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
@@ -23,7 +32,7 @@ class Weather {
                                     URLQueryItem(name: "mode", value: "json"),
                                     URLQueryItem(name: "lang", value: "fr"),
                                     URLQueryItem(name: "units", value: "metric"),
-                                    URLQueryItem(name: "APPID", value: "5c915203c016a952f1078a88093635a0")]
+                                    URLQueryItem(name: "APPID", value: apiKey)]
         
         // If this fail, it's because a programming error -> wrong URL
         guard let url = urlComponents.url else {
@@ -37,7 +46,7 @@ class Weather {
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
             
-            if let error = error {
+            if let error = error as NSError? {
                 DispatchQueue.main.async {
                     then(.failure(.requestError(error)))
                 }

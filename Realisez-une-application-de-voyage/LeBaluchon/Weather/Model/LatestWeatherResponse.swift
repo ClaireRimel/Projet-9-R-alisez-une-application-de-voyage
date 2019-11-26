@@ -8,20 +8,19 @@
 
 import Foundation
 
-struct LatestWeatherResponse: Codable {
+struct LatestWeatherResponse: Codable, Equatable {
     let main: MainResponse
     let weather: [DescriptionResponse]
-    let name: String
     let dt: TimeInterval
 }
 
-struct MainResponse: Codable {
+struct MainResponse: Codable, Equatable {
     let temp: Double
     let humidity: Int
     let temp_min: Double
     let temp_max: Double
 }
 
-struct DescriptionResponse: Codable {
+struct DescriptionResponse: Codable, Equatable {
     let description: String
 }

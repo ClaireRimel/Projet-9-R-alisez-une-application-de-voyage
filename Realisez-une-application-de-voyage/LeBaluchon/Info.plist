@@ -24,6 +24,8 @@
 	<string>AIzaSyAh6QBJVjrVwgAZUH8IsxSUc9Tscf5B0WI</string>
 	<key>FIXER_CURRENCY_KEY</key>
 	<string>4fc6ed95e4887dca01ddb1d5efe7c924</string>
+	<key>OPENWEATHERMAP_WEATHER_KEY</key>
+	<string>5c915203c016a952f1078a88093635a0</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

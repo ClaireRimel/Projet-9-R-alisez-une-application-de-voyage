@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum WeatherError: Error {
-    case requestError(Error)
+enum WeatherError: Error, Equatable {
+    case requestError(NSError)
     case invalidResponseFormat
 }
 

@@ -1,0 +1,136 @@
+//
+//  WeatherTest.swift
+//  LeBaluchonTests
+//
+//  Created by Claire on 26/11/2019.
+//  Copyright © 2019 Claire Sivadier. All rights reserved.
+//
+
+import XCTest
+@testable import LeBaluchon
+
+class WeatherTest: XCTestCase {
+    
+    var sut: Weather!
+    var requestMock: RequestInterfaceMock!
+    let apiKeyMock = "1234345"
+    
+    override func setUp() {
+        requestMock = RequestInterfaceMock()
+        sut = Weather(session: requestMock, apiKey: apiKeyMock)
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func testFrenchTranslation() {
+        // Given
+        let input = "nantes,fr"
+        let expectation = self.expectation(description: "")
+        
+        let mainResponse = MainResponse(temp: 20, humidity: 10, temp_min: 2, temp_max: 21)
+        let descriptionResponse = DescriptionResponse(description: "Pluvieux")
+        let response = LatestWeatherResponse(main: mainResponse, weather: [descriptionResponse], dt: 122344556)
+        requestMock.response = response
+        
+        // When
+        sut.request(from: input, then: { (result) in
+            // Then
+            XCTAssertEqual(result, .success(response))
+            expectation.fulfill()
+        })
+        //wait...
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testRequestError() {
+                // Given
+           let error = NSError(domain: "", code: 0, userInfo: nil)
+           let input = "nantes,fr"
+           let expectation = self.expectation(description: "")
+           
+           requestMock.error = error
+           
+           // When
+           sut.request(from: input) { (result) in
+               // Then
+               XCTAssertEqual(result, .failure(.requestError(error)))
+               expectation.fulfill()
+           }
+           waitForExpectations(timeout: 1, handler: nil)
+       }
+    
+    func testInvalidResponseFormat() {
+        // Given
+        let input = "nantes,fr"
+        let expectation = self.expectation(description: "")
+        
+        requestMock.data = Data()
+        
+        // When
+        sut.request(from: input) { (result) in
+            // Then
+            XCTAssertEqual(result, .failure(.invalidResponseFormat))
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testRequestsData() {
+          // Given
+        let input = "nantes,fr"
+        let mainResponse = MainResponse(temp: 20, humidity: 10, temp_min: 2, temp_max: 21)
+        let descriptionResponse = DescriptionResponse(description: "Pluvieux")
+
+        requestMock.response = LatestWeatherResponse(main: mainResponse, weather: [descriptionResponse], dt: 122344556)
+        // When
+        sut.request(from: input) {_ in}
+        
+        //Then
+          XCTAssertEqual(self.requestMock.request?.httpMethod, "GET")
+          
+          let url = requestMock.request?.url?.absoluteString
+          let urlComponents = URLComponents(string: url!)
+          
+          XCTAssertEqual(urlComponents?.scheme, "https")
+          XCTAssertEqual(urlComponents?.host, "api.openweathermap.org")
+          XCTAssertEqual(urlComponents?.path, "/data/2.5/weather")
+          XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: input))
+          XCTAssertEqual(urlComponents?.queryItems?[1], URLQueryItem(name: "mode", value: "json"))
+          XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "lang", value: "fr"))
+          XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "units", value: "metric"))
+          XCTAssertEqual(urlComponents?.queryItems?[4], URLQueryItem(name: "APPID", value: apiKeyMock))
+      }
+}
+
+
+
+extension WeatherTest {
+    
+    final class RequestInterfaceMock: RequestInterface {
+        
+        var request: URLRequest?
+        
+        var response: LatestWeatherResponse?
+        
+        var error: Error?
+        
+        var data: Data?
+        
+        func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+                         self.request = request
+                         
+                         if let response = response {
+                             let data = try! JSONEncoder().encode(response)
+                             completionHandler(data, nil, nil)
+                             
+                         } else {
+                             completionHandler(data, nil, error)
+                         }
+                         
+                         return URLSessionDataTask()
+                     }
+       
+    }
+}
