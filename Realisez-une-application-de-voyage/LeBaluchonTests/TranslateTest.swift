@@ -63,7 +63,7 @@ class TranslateTest: XCTestCase {
     func testRequestError() {
                 // Given
            let error = NSError(domain: "", code: 0, userInfo: nil)
-           let input = "100,00€"
+           let input = "Bonjours"
            let expectation = self.expectation(description: "")
            
            requestMock.error = error
@@ -79,7 +79,7 @@ class TranslateTest: XCTestCase {
        
     func testInvalidResponseFormat() {
         // Given
-        let input = "100,00€"
+        let input = "Bonjour"
         let expectation = self.expectation(description: "")
         
         requestMock.data = Data()
