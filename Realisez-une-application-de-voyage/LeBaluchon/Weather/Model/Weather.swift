@@ -16,7 +16,7 @@ class Weather {
     
     // Default argument in function
     init(session: RequestInterface = URLSession.shared,
-         apiKey: String = Bundle.main.object(forInfoDictionaryKey: "OPENWEATHERMAP_WEATHER_KEY") as! String) {
+         apiKey: String = APIKeys.weather) {
         self.session = session
         self.apiKey = apiKey
     }

@@ -23,7 +23,7 @@ class CurrencyConverter {
     
     // Default argument in function
     init(session: RequestInterface = URLSession.shared,
-         apiKey: String = Bundle.main.object(forInfoDictionaryKey: "FIXER_CURRENCY_KEY") as! String) {
+         apiKey: String = APIKeys.currency) {
         self.session = session
         self.apiKey = apiKey
     }

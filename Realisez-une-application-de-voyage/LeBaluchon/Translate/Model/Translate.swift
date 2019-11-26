@@ -16,7 +16,7 @@ class Translation {
       
       // Default argument in function
       init(session: RequestInterface = URLSession.shared,
-           apiKey: String = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_TRANSLATION_KEY") as! String) {
+           apiKey: String = APIKeys.translation) {
           self.session = session
           self.apiKey = apiKey
       }

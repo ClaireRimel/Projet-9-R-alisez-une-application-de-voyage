@@ -10,6 +10,8 @@
 		FA1137ED238DB9DF005FB12F /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EC238DB9DF005FB12F /* Weather.storyboard */; };
 		FA1137EF238DBA14005FB12F /* Translation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EE238DBA14005FB12F /* Translation.storyboard */; };
 		FA1137FB238DC796005FB12F /* Currency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137FA238DC796005FB12F /* Currency.storyboard */; };
+		FA37F1A8238DE198002F54B2 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA37F1A7238DE198002F54B2 /* ApiKeys.plist */; };
+		FA37F1AA238DE941002F54B2 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F1A9238DE941002F54B2 /* ApiKeys.swift */; };
 		FA46CDE6237495160060828D /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE5237495160060828D /* Translate.swift */; };
 		FA46CDE8237495510060828D /* TranslationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE7237495510060828D /* TranslationError.swift */; };
 		FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE9237495910060828D /* LatestTranslationResponse.swift */; };
@@ -46,6 +48,8 @@
 		FA1137EC238DB9DF005FB12F /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		FA1137EE238DBA14005FB12F /* Translation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translation.storyboard; sourceTree = "<group>"; };
 		FA1137FA238DC796005FB12F /* Currency.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Currency.storyboard; sourceTree = "<group>"; };
+		FA37F1A7238DE198002F54B2 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		FA37F1A9238DE941002F54B2 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		FA46CDE5237495160060828D /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		FA46CDE7237495510060828D /* TranslationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationError.swift; sourceTree = "<group>"; };
 		FA46CDE9237495910060828D /* LatestTranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTranslationResponse.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				FA8EEA7323572E10008EE59B /* Main.storyboard */,
 				FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */,
 				FA8EEA7623572E13008EE59B /* Assets.xcassets */,
+				FA37F1A7238DE198002F54B2 /* ApiKeys.plist */,
+				FA37F1A9238DE941002F54B2 /* ApiKeys.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA37F1A8238DE198002F54B2 /* ApiKeys.plist in Resources */,
 				FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */,
 				FA1137FB238DC796005FB12F /* Currency.storyboard in Resources */,
 				FA1137ED238DB9DF005FB12F /* Weather.storyboard in Resources */,
@@ -370,6 +377,7 @@
 				FAAE3108236C8C9700179EB6 /* LatestCurrencyResponse.swift in Sources */,
 				FA8EEA9723576430008EE59B /* CurrencyViewController.swift in Sources */,
 				FA8EEA6E23572E10008EE59B /* AppDelegate.swift in Sources */,
+				FA37F1AA238DE941002F54B2 /* ApiKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
