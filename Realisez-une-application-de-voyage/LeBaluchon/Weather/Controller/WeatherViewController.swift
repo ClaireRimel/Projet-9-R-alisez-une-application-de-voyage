@@ -25,6 +25,12 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            citiesSegmented.selectedSegmentTintColor = UIColor(named: "Jaune")!
+        } else {
+            citiesSegmented.tintColor = UIColor(named: "Jaune")!
+        }
         citySwitched(citiesSegmented)
 
     }

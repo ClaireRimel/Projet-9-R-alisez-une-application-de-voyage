@@ -27,7 +27,6 @@
                                             <segment title="Nantes"/>
                                             <segment title="New York"/>
                                         </segments>
-                                        <color key="selectedSegmentTintColor" name="Jaune"/>
                                         <connections>
                                             <action selector="citySwitched:" destination="X2k-X9-WJA" eventType="valueChanged" id="1T3-dL-Zj3"/>
                                         </connections>

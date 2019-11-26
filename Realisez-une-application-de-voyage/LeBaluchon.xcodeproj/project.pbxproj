@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA1137EB238DB9AC005FB12F /* Currency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EA238DB9AC005FB12F /* Currency.storyboard */; };
 		FA1137ED238DB9DF005FB12F /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EC238DB9DF005FB12F /* Weather.storyboard */; };
 		FA1137EF238DBA14005FB12F /* Translation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EE238DBA14005FB12F /* Translation.storyboard */; };
+		FA1137FB238DC796005FB12F /* Currency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137FA238DC796005FB12F /* Currency.storyboard */; };
 		FA46CDE6237495160060828D /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE5237495160060828D /* Translate.swift */; };
 		FA46CDE8237495510060828D /* TranslationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE7237495510060828D /* TranslationError.swift */; };
 		FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE9237495910060828D /* LatestTranslationResponse.swift */; };
@@ -43,9 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA1137EA238DB9AC005FB12F /* Currency.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Currency.storyboard; sourceTree = "<group>"; };
 		FA1137EC238DB9DF005FB12F /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		FA1137EE238DBA14005FB12F /* Translation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translation.storyboard; sourceTree = "<group>"; };
+		FA1137FA238DC796005FB12F /* Currency.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Currency.storyboard; sourceTree = "<group>"; };
 		FA46CDE5237495160060828D /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		FA46CDE7237495510060828D /* TranslationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationError.swift; sourceTree = "<group>"; };
 		FA46CDE9237495910060828D /* LatestTranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTranslationResponse.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 		FAAE310B236C8D1000179EB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA1137EA238DB9AC005FB12F /* Currency.storyboard */,
+				FA1137FA238DC796005FB12F /* Currency.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,8 +334,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */,
+				FA1137FB238DC796005FB12F /* Currency.storyboard in Resources */,
 				FA1137ED238DB9DF005FB12F /* Weather.storyboard in Resources */,
-				FA1137EB238DB9AC005FB12F /* Currency.storyboard in Resources */,
 				FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */,
 				FA1137EF238DBA14005FB12F /* Translation.storyboard in Resources */,
 				FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */,
