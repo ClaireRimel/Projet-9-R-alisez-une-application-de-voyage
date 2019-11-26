@@ -10,6 +10,8 @@
 		FA46CDE6237495160060828D /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE5237495160060828D /* Translate.swift */; };
 		FA46CDE8237495510060828D /* TranslationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE7237495510060828D /* TranslationError.swift */; };
 		FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE9237495910060828D /* LatestTranslationResponse.swift */; };
+		FA5E8394238D8A5A00C51A48 /* TranslateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E8393238D8A5A00C51A48 /* TranslateTest.swift */; };
+		FA5E8398238D8EEC00C51A48 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E8397238D8EEC00C51A48 /* CommonProtocols.swift */; };
 		FA6FCD3D237B120100F779D2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD3C237B120100F779D2 /* Weather.swift */; };
 		FA6FCD3F237B139C00F779D2 /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD3E237B139C00F779D2 /* WeatherError.swift */; };
 		FA6FCD41237B13F700F779D2 /* LatestWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */; };
@@ -40,6 +42,8 @@
 		FA46CDE5237495160060828D /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		FA46CDE7237495510060828D /* TranslationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationError.swift; sourceTree = "<group>"; };
 		FA46CDE9237495910060828D /* LatestTranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTranslationResponse.swift; sourceTree = "<group>"; };
+		FA5E8393238D8A5A00C51A48 /* TranslateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTest.swift; sourceTree = "<group>"; };
+		FA5E8397238D8EEC00C51A48 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
 		FA6FCD3C237B120100F779D2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FA6FCD3E237B139C00F779D2 /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
 		FA6FCD40237B13F700F779D2 /* LatestWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestWeatherResponse.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				FA46CDE1237494CA0060828D /* Translate */,
 				FAAE3109236C8CCB00179EB6 /* Currency */,
 				FA8EEA6D23572E10008EE59B /* AppDelegate.swift */,
+				FA5E8397238D8EEC00C51A48 /* CommonProtocols.swift */,
 				FA8EEA7B23572E13008EE59B /* Info.plist */,
 				FA8EEA902357319D008EE59B /* View */,
 			);
@@ -149,6 +154,7 @@
 			children = (
 				FA8EEA8623572E13008EE59B /* Info.plist */,
 				FA72B0AF238C561D00B3F9AC /* CurrencyConverterTests.swift */,
+				FA5E8393238D8A5A00C51A48 /* TranslateTest.swift */,
 			);
 			path = LeBaluchonTests;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				FA8EEA9923576466008EE59B /* TranslateViewController.swift in Sources */,
 				FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */,
 				FA6FCD3F237B139C00F779D2 /* WeatherError.swift in Sources */,
+				FA5E8398238D8EEC00C51A48 /* CommonProtocols.swift in Sources */,
 				FAEDCF382368983F00665B35 /* CurrencyConverter.swift in Sources */,
 				FAAE3108236C8C9700179EB6 /* LatestCurrencyResponse.swift in Sources */,
 				FA8EEA9723576430008EE59B /* CurrencyViewController.swift in Sources */,
@@ -355,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5E8394238D8A5A00C51A48 /* TranslateTest.swift in Sources */,
 				FA72B0B0238C561D00B3F9AC /* CurrencyConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

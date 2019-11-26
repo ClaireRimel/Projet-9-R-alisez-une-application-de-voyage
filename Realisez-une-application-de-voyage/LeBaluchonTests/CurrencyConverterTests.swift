@@ -10,7 +10,7 @@ import XCTest
 @testable import LeBaluchon
 
 class CurrencyConverterTests: XCTestCase {
-
+    
     var sut: CurrencyConverter!
     var requestMock: RequestInterfaceMock!
     let apiKeyMock = "1234345"
@@ -57,7 +57,12 @@ class CurrencyConverterTests: XCTestCase {
     
     func testPerformCalculationWithExistingData() {
         // Given
-        sut.latestRateAndDate = CurrencyConverter.LatestRateAndDate(usdRate: 2.0, requestDate: "2019-11-25")
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd"
+        let formattedDate = format.string(from: date)
+        
+        sut.latestRateAndDate = CurrencyConverter.LatestRateAndDate(usdRate: 2.0, requestDate: formattedDate)
         let input = "100,00€"
         let expectation = self.expectation(description: "")
 
