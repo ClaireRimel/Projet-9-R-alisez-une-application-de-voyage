@@ -1,7 +1,7 @@
 
 # Created by https://www.gitignore.io/api/swift,macos
 # Edit at https://www.gitignore.io/?templates=swift,macos
-ApiKeys.*
+ApiKeys.plist
 ### macOS ###
 # General
 .DS_Store
@@ -13,7 +13,7 @@ Icon
 
 # Thumbnails
 ._*
-
+ 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
