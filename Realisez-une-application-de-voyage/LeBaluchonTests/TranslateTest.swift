@@ -140,7 +140,12 @@ extension TranslateTest {
             } else {
                 completionHandler(data, nil, error)
             }
-            return URLSessionDataTask()
+            
+            if #available(iOS 13, *) {
+                return URLSession.shared.dataTask(with: request)
+            } else {
+                return URLSessionDataTask()
+            }
         }
     }
 }

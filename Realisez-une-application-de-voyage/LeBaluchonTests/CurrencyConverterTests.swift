@@ -19,11 +19,11 @@ class CurrencyConverterTests: XCTestCase {
         requestMock = RequestInterfaceMock()
         sut = CurrencyConverter(session: requestMock, apiKey: apiKeyMock)
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testInvalidInputCharacter() {
         // Given
         let input = "A"
@@ -34,7 +34,7 @@ class CurrencyConverterTests: XCTestCase {
             // Then
             XCTAssertEqual(result, .failure(.invalidInput))
             expectation.fulfill()
-
+            
         }
         //wait...
         waitForExpectations(timeout: 1, handler: nil)
@@ -65,10 +65,10 @@ class CurrencyConverterTests: XCTestCase {
         sut.latestRateAndDate = CurrencyConverter.LatestRateAndDate(usdRate: 2.0, requestDate: formattedDate)
         let input = "100,00€"
         let expectation = self.expectation(description: "")
-
+        
         // When
         sut.convert(from: input) { (result) in
-             // Then
+            // Then
             XCTAssertEqual(result, .success(200))
             expectation.fulfill()
         }
@@ -82,10 +82,10 @@ class CurrencyConverterTests: XCTestCase {
         let expectation = self.expectation(description: "")
         
         requestMock.response = LatestCurrencyResponse(success: true, timestamp: 0, base: "", date: "", rates: ["USD": 2.0])
-
+        
         // When
         sut.convert(from: input) { (result) in
-             // Then
+            // Then
             XCTAssertEqual(result, .success(200))
             expectation.fulfill()
         }
@@ -99,10 +99,10 @@ class CurrencyConverterTests: XCTestCase {
         let expectation = self.expectation(description: "")
         
         requestMock.data = Data()
-
+        
         // When
         sut.convert(from: input) { (result) in
-             // Then
+            // Then
             XCTAssertEqual(result, .failure(.invalidResponseFormat))
             expectation.fulfill()
         }
@@ -113,7 +113,7 @@ class CurrencyConverterTests: XCTestCase {
         // Given
         sut.latestRateAndDate = nil
         let input = "100,00€"
-
+        
         // When
         sut.convert(from: input) {_ in}
         
@@ -132,7 +132,7 @@ class CurrencyConverterTests: XCTestCase {
     }
     
     func testRequestError() {
-             // Given
+        // Given
         let error = NSError(domain: "", code: 0, userInfo: nil)
         sut.latestRateAndDate = nil
         let input = "100,00€"
@@ -150,21 +150,21 @@ class CurrencyConverterTests: XCTestCase {
     }
     
     func testUsdRateNotFound() {
-           // Given
-           sut.latestRateAndDate = nil
-           let input = "100,00€"
-           let expectation = self.expectation(description: "")
-           
-           requestMock.response = LatestCurrencyResponse(success: true, timestamp: 0, base: "", date: "", rates: ["": 2.0])
-
-           // When
-           sut.convert(from: input) { (result) in
-                // Then
-               XCTAssertEqual(result, .failure(.usdRateNotFound))
-               expectation.fulfill()
-           }
-           waitForExpectations(timeout: 1, handler: nil)
-       }
+        // Given
+        sut.latestRateAndDate = nil
+        let input = "100,00€"
+        let expectation = self.expectation(description: "")
+        
+        requestMock.response = LatestCurrencyResponse(success: true, timestamp: 0, base: "", date: "", rates: ["": 2.0])
+        
+        // When
+        sut.convert(from: input) { (result) in
+            // Then
+            XCTAssertEqual(result, .failure(.usdRateNotFound))
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
 }
 
 
@@ -173,16 +173,16 @@ extension CurrencyConverterTests {
     final class RequestInterfaceMock: RequestInterface {
         
         var request: URLRequest?
-                
+        
         var response: LatestCurrencyResponse?
         
         var error: Error?
         
         var data: Data?
-
+        
         func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
             self.request = request
-                    
+            
             if let response = response {
                 let data = try! JSONEncoder().encode(response)
                 completionHandler(data, nil, nil)
@@ -190,7 +190,12 @@ extension CurrencyConverterTests {
             } else {
                 completionHandler(data, nil, error)
             }
-            return URLSessionDataTask()
+            
+            if #available(iOS 13, *) {
+                return URLSession.shared.dataTask(with: request)
+            } else {
+                return URLSessionDataTask()
+            }
         }
     }
 }

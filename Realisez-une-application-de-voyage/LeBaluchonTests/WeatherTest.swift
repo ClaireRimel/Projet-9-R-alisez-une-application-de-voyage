@@ -45,21 +45,21 @@ class WeatherTest: XCTestCase {
     }
     
     func testRequestError() {
-                // Given
-           let error = NSError(domain: "", code: 0, userInfo: nil)
-           let input = "nantes,fr"
-           let expectation = self.expectation(description: "")
-           
-           requestMock.error = error
-           
-           // When
-           sut.request(from: input) { (result) in
-               // Then
-               XCTAssertEqual(result, .failure(.requestError(error)))
-               expectation.fulfill()
-           }
-           waitForExpectations(timeout: 1, handler: nil)
-       }
+        // Given
+        let error = NSError(domain: "", code: 0, userInfo: nil)
+        let input = "nantes,fr"
+        let expectation = self.expectation(description: "")
+        
+        requestMock.error = error
+        
+        // When
+        sut.request(from: input) { (result) in
+            // Then
+            XCTAssertEqual(result, .failure(.requestError(error)))
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
     
     func testInvalidResponseFormat() {
         // Given
@@ -78,30 +78,30 @@ class WeatherTest: XCTestCase {
     }
     
     func testRequestsData() {
-          // Given
+        // Given
         let input = "nantes,fr"
         let mainResponse = MainResponse(temp: 20, humidity: 10, temp_min: 2, temp_max: 21)
         let descriptionResponse = DescriptionResponse(description: "Pluvieux")
-
+        
         requestMock.response = LatestWeatherResponse(main: mainResponse, weather: [descriptionResponse], dt: 122344556)
         // When
         sut.request(from: input) {_ in}
         
         //Then
-          XCTAssertEqual(self.requestMock.request?.httpMethod, "GET")
-          
-          let url = requestMock.request?.url?.absoluteString
-          let urlComponents = URLComponents(string: url!)
-          
-          XCTAssertEqual(urlComponents?.scheme, "https")
-          XCTAssertEqual(urlComponents?.host, "api.openweathermap.org")
-          XCTAssertEqual(urlComponents?.path, "/data/2.5/weather")
-          XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: input))
-          XCTAssertEqual(urlComponents?.queryItems?[1], URLQueryItem(name: "mode", value: "json"))
-          XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "lang", value: "fr"))
-          XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "units", value: "metric"))
-          XCTAssertEqual(urlComponents?.queryItems?[4], URLQueryItem(name: "APPID", value: apiKeyMock))
-      }
+        XCTAssertEqual(self.requestMock.request?.httpMethod, "GET")
+        
+        let url = requestMock.request?.url?.absoluteString
+        let urlComponents = URLComponents(string: url!)
+        
+        XCTAssertEqual(urlComponents?.scheme, "https")
+        XCTAssertEqual(urlComponents?.host, "api.openweathermap.org")
+        XCTAssertEqual(urlComponents?.path, "/data/2.5/weather")
+        XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: input))
+        XCTAssertEqual(urlComponents?.queryItems?[1], URLQueryItem(name: "mode", value: "json"))
+        XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "lang", value: "fr"))
+        XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "units", value: "metric"))
+        XCTAssertEqual(urlComponents?.queryItems?[4], URLQueryItem(name: "APPID", value: apiKeyMock))
+    }
 }
 
 
@@ -119,18 +119,21 @@ extension WeatherTest {
         var data: Data?
         
         func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-                         self.request = request
-                         
-                         if let response = response {
-                             let data = try! JSONEncoder().encode(response)
-                             completionHandler(data, nil, nil)
-                             
-                         } else {
-                             completionHandler(data, nil, error)
-                         }
-                         
-                         return URLSessionDataTask()
-                     }
-       
+            self.request = request
+            
+            if let response = response {
+                let data = try! JSONEncoder().encode(response)
+                completionHandler(data, nil, nil)
+                
+            } else {
+                completionHandler(data, nil, error)
+            }
+            
+            if #available(iOS 13, *) {
+                return URLSession.shared.dataTask(with: request)
+            } else {
+                return URLSessionDataTask()
+            }
+        }
     }
 }
