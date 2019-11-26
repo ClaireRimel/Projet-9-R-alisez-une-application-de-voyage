@@ -165,33 +165,32 @@ class CurrencyConverterTests: XCTestCase {
            }
            waitForExpectations(timeout: 1, handler: nil)
        }
-    
-    // Given
-    // When
-    // Then
 }
 
-final class RequestInterfaceMock: RequestInterface {
-    
-    var request: URLRequest?
-            
-    var response: LatestCurrencyResponse?
-    
-    var error: Error?
-    
-    var data: Data?
 
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        self.request = request
-                
-        if let response = response {
-            let data = try! JSONEncoder().encode(response)
-            completionHandler(data, nil, nil)
-            
-        } else {
-            completionHandler(data, nil, error)
-        }
+extension CurrencyConverterTests {
+    
+    final class RequestInterfaceMock: RequestInterface {
         
-        return URLSessionDataTask()
+        var request: URLRequest?
+                
+        var response: LatestCurrencyResponse?
+        
+        var error: Error?
+        
+        var data: Data?
+
+        func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+            self.request = request
+                    
+            if let response = response {
+                let data = try! JSONEncoder().encode(response)
+                completionHandler(data, nil, nil)
+                
+            } else {
+                completionHandler(data, nil, error)
+            }
+            return URLSessionDataTask()
+        }
     }
 }

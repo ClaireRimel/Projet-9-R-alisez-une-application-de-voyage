@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1137EB238DB9AC005FB12F /* Currency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EA238DB9AC005FB12F /* Currency.storyboard */; };
+		FA1137ED238DB9DF005FB12F /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EC238DB9DF005FB12F /* Weather.storyboard */; };
+		FA1137EF238DBA14005FB12F /* Translation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1137EE238DBA14005FB12F /* Translation.storyboard */; };
 		FA46CDE6237495160060828D /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE5237495160060828D /* Translate.swift */; };
 		FA46CDE8237495510060828D /* TranslationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE7237495510060828D /* TranslationError.swift */; };
 		FA46CDEA237495910060828D /* LatestTranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46CDE9237495910060828D /* LatestTranslationResponse.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA1137EA238DB9AC005FB12F /* Currency.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Currency.storyboard; sourceTree = "<group>"; };
+		FA1137EC238DB9DF005FB12F /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
+		FA1137EE238DBA14005FB12F /* Translation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translation.storyboard; sourceTree = "<group>"; };
 		FA46CDE5237495160060828D /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		FA46CDE7237495510060828D /* TranslationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationError.swift; sourceTree = "<group>"; };
 		FA46CDE9237495910060828D /* LatestTranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTranslationResponse.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 		FA46CDE3237494EF0060828D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA1137EE238DBA14005FB12F /* Translation.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,10 +150,7 @@
 				FAA37E4E2379F95D00EC0DC4 /* Weather */,
 				FA46CDE1237494CA0060828D /* Translate */,
 				FAAE3109236C8CCB00179EB6 /* Currency */,
-				FA8EEA6D23572E10008EE59B /* AppDelegate.swift */,
-				FA5E8397238D8EEC00C51A48 /* CommonProtocols.swift */,
-				FA8EEA7B23572E13008EE59B /* Info.plist */,
-				FA8EEA902357319D008EE59B /* View */,
+				FA8EEA902357319D008EE59B /* Source */,
 			);
 			path = LeBaluchon;
 			sourceTree = "<group>";
@@ -172,14 +176,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FA8EEA902357319D008EE59B /* View */ = {
+		FA8EEA902357319D008EE59B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FA8EEA7B23572E13008EE59B /* Info.plist */,
+				FA5E8397238D8EEC00C51A48 /* CommonProtocols.swift */,
+				FA8EEA6D23572E10008EE59B /* AppDelegate.swift */,
 				FA8EEA7323572E10008EE59B /* Main.storyboard */,
 				FA8EEA7823572E13008EE59B /* LaunchScreen.storyboard */,
 				FA8EEA7623572E13008EE59B /* Assets.xcassets */,
 			);
-			path = View;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		FAA37E4E2379F95D00EC0DC4 /* Weather */ = {
@@ -203,6 +210,7 @@
 		FAA37E502379F97500EC0DC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA1137EC238DB9DF005FB12F /* Weather.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 		FAAE310B236C8D1000179EB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA1137EA238DB9AC005FB12F /* Currency.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,7 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EEA7A23572E13008EE59B /* LaunchScreen.storyboard in Resources */,
+				FA1137ED238DB9DF005FB12F /* Weather.storyboard in Resources */,
+				FA1137EB238DB9AC005FB12F /* Currency.storyboard in Resources */,
 				FA8EEA7723572E13008EE59B /* Assets.xcassets in Resources */,
+				FA1137EF238DBA14005FB12F /* Translation.storyboard in Resources */,
 				FA8EEA7523572E10008EE59B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -505,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -521,7 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
-				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Source/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
-				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Source/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

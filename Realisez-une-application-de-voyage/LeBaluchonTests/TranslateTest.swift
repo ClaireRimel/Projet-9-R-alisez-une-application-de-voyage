@@ -116,7 +116,6 @@ class TranslateTest: XCTestCase {
         XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "format", value: "text"))
         XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "key", value: apiKeyMock))
     }
-
 }
 
 extension TranslateTest {
@@ -141,7 +140,6 @@ extension TranslateTest {
             } else {
                 completionHandler(data, nil, error)
             }
-            
             return URLSessionDataTask()
         }
     }
