@@ -10,18 +10,22 @@ import UIKit
 
 class Translation {
     
+      let session: RequestInterface
+      
+      let apiKey: String
+      
+      // Default argument in function
+      init(session: RequestInterface = URLSession.shared,
+           apiKey: String = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_TRANSLATION_KEY") as! String) {
+          self.session = session
+          self.apiKey = apiKey
+      }
+    
     func request(from: String, then: @escaping (Result<String, TranslationError>) -> Void) {
-        let session = URLSession.shared
-        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "translation.googleapis.com"
         urlComponents.path = "/language/translate/v2"
-        
-        //parameters
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_TRANSLATION_KEY") as? String else {
-            fatalError("Missing google translation API Key")
-        }
         
         urlComponents.queryItems = [URLQueryItem(name: "q", value: from),
                                     URLQueryItem(name: "target", value: "en"),
@@ -39,7 +43,7 @@ class Translation {
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
             
-            if let error = error {
+            if let error = error as NSError? {
                 DispatchQueue.main.async {
                     then(.failure(.requestError(error)))
                 }

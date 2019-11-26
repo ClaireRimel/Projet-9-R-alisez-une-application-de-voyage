@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum TranslationError: Error {
-    case requestError(Error)
+enum TranslationError: Error, Equatable {
+    case requestError(NSError)
     case invalidResponseFormat
 }
 
