@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wxX-VS-gL6">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -9,90 +9,110 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tranduction-->
+        <!--Traduction-->
         <scene sceneID="MYy-xz-Ceh">
             <objects>
                 <viewController id="wxX-VS-gL6" customClass="TranslateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24u-eS-Aml">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-hO-KYS">
-                                <rect key="frame" x="188.5" y="790.5" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="496.5" width="37" height="37"/>
                                 <color key="color" red="0.92123508450000002" green="0.60636752839999997" blue="0.37248343229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="g2i-c6-NSf">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="g2i-c6-NSf" userLabel="Global Stack View">
+                                <rect key="frame" x="20" y="20" width="280" height="528"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insérer le text à traduire " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-sH-mIF">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="Mn5-rZ-WHk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
-                                        <color key="textColor" name="Jaune"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-pr-ctl">
-                                        <rect key="frame" x="0.0" y="41" width="374" height="297"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" keyboardType="alphabet"/>
-                                    </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Traduit en anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-is-Pnt">
-                                        <rect key="frame" x="0.0" y="356" width="374" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="Tyk-CR-efy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
-                                        <color key="textColor" name="Jaune"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Gh-8Cs">
-                                        <rect key="frame" x="0.0" y="397" width="374" height="297"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b15-gF-fs8" userLabel="Text">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="444"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-47-yxl" userLabel="text to translate">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="217"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insérer le texte à traduire " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-sH-mIF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="23" id="Mn5-rZ-WHk"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                        <color key="textColor" name="Jaune"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-pr-ctl">
+                                                        <rect key="frame" x="0.0" y="41" width="280" height="176"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" keyboardType="alphabet"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="J31-Va-NZN" userLabel="text translated">
+                                                <rect key="frame" x="0.0" y="227" width="280" height="217"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texte traduit en anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-is-Pnt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="23" id="Tyk-CR-efy"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                        <color key="textColor" name="Jaune"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Gh-8Cs">
+                                                        <rect key="frame" x="0.0" y="41" width="280" height="176"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <variation key="widthClass=regular" spacing="18"/>
+                                        <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5P-ED-3GT">
-                                        <rect key="frame" x="0.0" y="712" width="374" height="66"/>
+                                        <rect key="frame" x="0.0" y="462" width="280" height="66"/>
                                         <color key="backgroundColor" name="Jaune"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="Gj9-Wq-7ZU"/>
+                                            <constraint firstAttribute="height" constant="66" id="Gj9-Wq-7ZU">
+                                                <variation key="heightClass=compact-widthClass=compact" constant="38"/>
+                                            </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
                                         <state key="normal" title="GO">
                                             <color key="titleColor" name="Background"/>
                                         </state>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="29"/>
+                                        </variation>
                                         <connections>
                                             <action selector="tappedGoButton:" destination="wxX-VS-gL6" eventType="touchUpInside" id="W4M-jI-m0S"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="st5-Gh-8Cs" firstAttribute="height" secondItem="AdZ-pr-ctl" secondAttribute="height" id="Wh3-Jg-kSw"/>
-                                </constraints>
+                                <variation key="heightClass=compact-widthClass=compact" spacing="10"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <color key="tintColor" red="0.22704121469999999" green="0.35996320840000001" blue="0.41569608450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="GKd-vP-blf" firstAttribute="trailing" secondItem="g2i-c6-NSf" secondAttribute="trailing" constant="20" id="1xk-CN-6hV"/>
                             <constraint firstItem="zbT-hO-KYS" firstAttribute="centerX" secondItem="d5P-ED-3GT" secondAttribute="centerX" id="Bw8-2d-1tb"/>
                             <constraint firstItem="g2i-c6-NSf" firstAttribute="top" secondItem="GKd-vP-blf" secondAttribute="top" constant="20" id="Lme-0Y-fTA"/>
+                            <constraint firstItem="g2i-c6-NSf" firstAttribute="leading" secondItem="GKd-vP-blf" secondAttribute="leading" constant="20" id="NnR-VP-ORG"/>
                             <constraint firstItem="GKd-vP-blf" firstAttribute="bottom" secondItem="g2i-c6-NSf" secondAttribute="bottom" constant="20" id="SSn-YI-1wp"/>
-                            <constraint firstAttribute="trailing" secondItem="g2i-c6-NSf" secondAttribute="trailing" constant="20" id="hmQ-aq-VYJ"/>
                             <constraint firstItem="zbT-hO-KYS" firstAttribute="centerY" secondItem="d5P-ED-3GT" secondAttribute="centerY" id="lmV-r8-tGN"/>
-                            <constraint firstItem="g2i-c6-NSf" firstAttribute="leading" secondItem="24u-eS-Aml" secondAttribute="leading" constant="20" id="wro-6L-VRn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GKd-vP-blf"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="KMh-Bh-bgT" appends="YES" id="beJ-e1-Lee"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tranduction" id="sNR-yu-itV"/>
+                    <navigationItem key="navigationItem" title="Traduction" id="sNR-yu-itV"/>
                     <connections>
                         <outlet property="activityIndicator" destination="zbT-hO-KYS" id="hb7-we-19f"/>
                         <outlet property="goButton" destination="d5P-ED-3GT" id="0oh-9d-MDg"/>

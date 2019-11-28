@@ -83,7 +83,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S14-tx-1g1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="469"/>
+            <point key="canvasLocation" x="-128" y="543"/>
         </scene>
         <!--Weather-->
         <scene sceneID="GVu-jd-Po4">
