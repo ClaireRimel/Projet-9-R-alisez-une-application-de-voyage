@@ -1,6 +1,6 @@
 # Projet-9-Réalisez-une-application-de-voyage
 
-On this 9th project, I have to realize an application for travelers.
+On this 9th project, I had to realize an application for travelers.
 
 It offers several services such as currency conversion (US dollar), the weather in the city of Nantes as well of New York and the translation of texts in English.
 
