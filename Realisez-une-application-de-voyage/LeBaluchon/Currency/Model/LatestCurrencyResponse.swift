@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+// Represents the JSON response for the fixer API to get information about currency. The JSON structure is represented by the the different structs defined in this file
 struct LatestCurrencyResponse: Codable {
     
     let success: Bool

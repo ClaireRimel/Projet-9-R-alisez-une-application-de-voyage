@@ -30,12 +30,14 @@ class CurrencyConverter {
     
     func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
+        // Verify if the String can be converter to a Double, if not, a error message will be displayed.
         guard let value = convertToDouble(from: from, locale: Locale(identifier: "fr_FR"))
             else {
                 then(.failure(.invalidInput))
                 return
         }
         
+        // Verify if the latest request was made the same day, to convert with the lastest rate recived, or if not, to process to a new request 
         if let latestRateAndDate = latestRateAndDate, wasRequestMadeToday(requestDate: latestRateAndDate.requestDate) {
             
             let usdValue = value * latestRateAndDate.usdRate
@@ -47,6 +49,7 @@ class CurrencyConverter {
         }
     }
     
+    // Use of URLComponents to construct the URL with the require parameters to request to fixer API info about a currency
     func request(from: Double, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
         var urlComponents = URLComponents()
@@ -64,18 +67,20 @@ class CurrencyConverter {
             fatalError("Invalid URL")
         }
         
+        // Sets the request as GET
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
             
+            // Verifies if the request threw an error
             if let error = error as NSError? {
                 DispatchQueue.main.async {
                     then(.failure(.requestError(error)))
                 }
                 return
             }
-            
+             // Verifies that the received JSON in the server response has a format that we expect
             guard let data = data,
                 let responseJSON = try? JSONDecoder().decode(LatestCurrencyResponse.self, from: data) else {
                     DispatchQueue.main.async {
@@ -83,7 +88,6 @@ class CurrencyConverter {
                     }
                     return
             }
-            print(responseJSON)
             
             guard let usdRate = responseJSON.rates["USD"] else {
                 DispatchQueue.main.async {
@@ -94,6 +98,7 @@ class CurrencyConverter {
             
             self.latestRateAndDate = LatestRateAndDate(usdRate: usdRate, requestDate: responseJSON.date)
             
+              // if both condition above are satisfied, it provides an instance of LatestWeatherResponse object, which reprensents the response received from the server, along with the Result's success case back to the caller
             let usdValue = from * usdRate
             DispatchQueue.main.async {
                 then(.success(usdValue))
@@ -102,6 +107,7 @@ class CurrencyConverter {
         task.resume()
     }
     
+    // Use to format the date and compare it with the latest date
     func wasRequestMadeToday(requestDate: String) -> Bool {
         let date = Date()
         let format = DateFormatter()
@@ -110,6 +116,7 @@ class CurrencyConverter {
         return formattedDate == requestDate
     }
     
+    // Use to convert a curreny to a Double
     func convertToDouble(from currency: String, locale: Locale) -> Double? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency

@@ -26,7 +26,8 @@ class CurrencyViewController: UIViewController {
         
         amountToExchange.text = "1"
         textFieldDidEndEditing(amountToExchange)
-                
+            
+        // This function is called in viewDidLoad to ask the model the currency information of 1 EUR.
         tappedGoButton(UIButton())
     }
     

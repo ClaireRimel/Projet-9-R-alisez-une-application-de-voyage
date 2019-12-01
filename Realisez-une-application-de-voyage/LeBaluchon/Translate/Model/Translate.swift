@@ -45,6 +45,7 @@ class Translation {
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
             
+            // Verifies if the request threw an error
             if let error = error as NSError? {
                 DispatchQueue.main.async {
                     then(.failure(.requestError(error)))
