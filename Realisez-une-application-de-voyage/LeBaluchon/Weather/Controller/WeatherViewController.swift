@@ -10,11 +10,9 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    let request = Weather()
-    var citySelected: String = ""
+    let weatherModel = Weather()
     
     @IBOutlet weak var citiesSegmented: UISegmentedControl!
-    
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var descriptionWeather: UILabel!
     @IBOutlet weak var currentTemperature: UILabel!
@@ -35,16 +33,7 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func citySwitched(_ sender: UISegmentedControl) {
-        switch citiesSegmented.selectedSegmentIndex {
-              case 0:
-                  citySelected = "nantes,fr"
-              case 1:
-                  citySelected = "new york,us"
-              default:
-                  citySelected = "nantes,fr"
-              }
-        
-        request.request(from: citySelected) { (result) in
+        weatherModel.request(from: citiesSegmented.selectedSegmentIndex) { (result) in
             switch result {
             case let .success(response):
 

@@ -21,15 +21,25 @@ class Weather {
         self.apiKey = apiKey
     }
     
-    func request(from: String, then: @escaping (Result<LatestWeatherResponse, WeatherError>) -> Void) {
-          
+    func request(from cityIndex: Int, then: @escaping (Result<LatestWeatherResponse, WeatherError>) -> Void) {
+        
+        let citySelected: String
+        switch cityIndex {
+        case 0:
+            citySelected = "nantes,fr"
+        case 1:
+            citySelected = "new york,us"
+        default:
+            citySelected = "nantes,fr"
+        }
+        
         // Use of URLComponents to construct the URL with the require parameters to request to openweathermap API weather info about a city
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
         urlComponents.path = "/data/2.5/weather"
         
-        urlComponents.queryItems = [URLQueryItem(name: "q", value: from),
+        urlComponents.queryItems = [URLQueryItem(name: "q", value: citySelected),
                                     URLQueryItem(name: "mode", value: "json"),
                                     URLQueryItem(name: "lang", value: "fr"),
                                     URLQueryItem(name: "units", value: "metric"),
