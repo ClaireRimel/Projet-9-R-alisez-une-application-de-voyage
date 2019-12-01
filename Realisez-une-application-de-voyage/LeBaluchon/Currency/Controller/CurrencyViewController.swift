@@ -27,7 +27,7 @@ class CurrencyViewController: UIViewController {
         amountToExchange.text = "1"
         textFieldDidEndEditing(amountToExchange)
                 
-        tappedGoButton((Any).self)
+        tappedGoButton(UIButton())
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {
