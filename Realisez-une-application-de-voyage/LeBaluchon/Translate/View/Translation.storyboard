@@ -123,7 +123,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyz-RR-kUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="KMh-Bh-bgT">
                     <connections>
-                        <action selector="dissmissKeyboard:" destination="wxX-VS-gL6" id="eYY-ik-bUm"/>
+                        <action selector="dismissKeyboard:" destination="wxX-VS-gL6" id="eYY-ik-bUm"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
