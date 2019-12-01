@@ -14,13 +14,11 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var outputTextView: UITextView!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
     
     let translation = Translation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {

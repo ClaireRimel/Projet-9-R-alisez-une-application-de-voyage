@@ -10,17 +10,18 @@ import UIKit
 
 class Translation {
     
-      let session: RequestInterface
-      
-      let apiKey: String
-      
-      // Default argument in function
-      init(session: RequestInterface = URLSession.shared,
-           apiKey: String = APIKeys.translation) {
-          self.session = session
-          self.apiKey = apiKey
-      }
+    let session: RequestInterface
     
+    let apiKey: String
+    
+    // Default argument in function
+    init(session: RequestInterface = URLSession.shared,
+         apiKey: String = APIKeys.translation) {
+        self.session = session
+        self.apiKey = apiKey
+    }
+    
+    // Use of URLComponents to construct the URL with the require parameters to request to Google API translation
     func request(from: String, then: @escaping (Result<String, TranslationError>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -31,13 +32,14 @@ class Translation {
                                     URLQueryItem(name: "target", value: "en"),
                                     URLQueryItem(name: "format", value: "text"),
                                     URLQueryItem(name: "key", value: apiKey)]
-
+        
         
         // If this fail, it's because a programming error -> wrong URL
         guard let url = urlComponents.url else {
             fatalError("Invalid URL")
         }
         
+        // Sets the request as POST
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -50,6 +52,7 @@ class Translation {
                 return
             }
             
+            // Verifies that the received JSON in the server response has a format that we expect
             guard let data = data,
                 let responseJSON = try? JSONDecoder().decode(LatestTranslationResponse.self, from: data) else {
                     DispatchQueue.main.async {
@@ -57,8 +60,8 @@ class Translation {
                     }
                     return
             }
-            print(responseJSON)
             
+            // if both condition above are satisfied, it provides an instance of LatestWeatherResponse object, which reprensents the response received from the server, along with the Result's success case back to the caller
             DispatchQueue.main.async {
                 then(.success(responseJSON.data.translations[0].translatedText))
             }
