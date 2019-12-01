@@ -26,7 +26,6 @@ class WeatherTest: XCTestCase {
     
     func testFrenchTranslation() {
         // Given
-        let input = "nantes,fr"
         let expectation = self.expectation(description: "")
         
         let mainResponse = MainResponse(temp: 20, humidity: 10, temp_min: 2, temp_max: 21)
@@ -35,7 +34,7 @@ class WeatherTest: XCTestCase {
         requestMock.response = response
         
         // When
-        sut.request(from: input, then: { (result) in
+        sut.request(from: 0, then: { (result) in
             // Then
             XCTAssertEqual(result, .success(response))
             expectation.fulfill()
@@ -47,13 +46,12 @@ class WeatherTest: XCTestCase {
     func testRequestError() {
         // Given
         let error = NSError(domain: "", code: 0, userInfo: nil)
-        let input = "nantes,fr"
         let expectation = self.expectation(description: "")
         
         requestMock.error = error
         
         // When
-        sut.request(from: input) { (result) in
+        sut.request(from: 0) { (result) in
             // Then
             XCTAssertEqual(result, .failure(.requestError(error)))
             expectation.fulfill()
@@ -63,13 +61,12 @@ class WeatherTest: XCTestCase {
     
     func testInvalidResponseFormat() {
         // Given
-        let input = "nantes,fr"
         let expectation = self.expectation(description: "")
         
         requestMock.data = Data()
         
         // When
-        sut.request(from: input) { (result) in
+        sut.request(from: 0) { (result) in
             // Then
             XCTAssertEqual(result, .failure(.invalidResponseFormat))
             expectation.fulfill()
@@ -79,13 +76,12 @@ class WeatherTest: XCTestCase {
     
     func testRequestsData() {
         // Given
-        let input = "nantes,fr"
         let mainResponse = MainResponse(temp: 20, humidity: 10, temp_min: 2, temp_max: 21)
         let descriptionResponse = DescriptionResponse(description: "Pluvieux")
-        
         requestMock.response = LatestWeatherResponse(main: mainResponse, weather: [descriptionResponse], dt: 122344556)
+        
         // When
-        sut.request(from: input) {_ in}
+        sut.request(from: 0) {_ in}
         
         //Then
         XCTAssertEqual(self.requestMock.request?.httpMethod, "GET")
@@ -96,7 +92,7 @@ class WeatherTest: XCTestCase {
         XCTAssertEqual(urlComponents?.scheme, "https")
         XCTAssertEqual(urlComponents?.host, "api.openweathermap.org")
         XCTAssertEqual(urlComponents?.path, "/data/2.5/weather")
-        XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: input))
+        XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: "nantes,fr"))
         XCTAssertEqual(urlComponents?.queryItems?[1], URLQueryItem(name: "mode", value: "json"))
         XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "lang", value: "fr"))
         XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "units", value: "metric"))
