@@ -29,7 +29,6 @@ class WeatherViewController: UIViewController {
             citiesSegmented.tintColor = UIColor(named: "Jaune")!
         }
         citySwitched(citiesSegmented)
-
     }
     
     @IBAction func citySwitched(_ sender: UISegmentedControl) {
@@ -48,11 +47,16 @@ class WeatherViewController: UIViewController {
                 let formattedDate = dateFormatter.string(from: date)
                 
                 self.date.text = "\(formattedDate)"
-                self.descriptionWeather.text = "\(response.weather[0].description)"
                 self.currentTemperature.text = "\(response.main.temp)ºC"
                 self.minTemperature.text = "\(response.main.temp_min)ºC"
                 self.maxTemperature.text = "\(response.main.temp_max)ºC"
                 self.humidity.text = "\(response.main.humidity)%"
+                
+                if let description = response.weather.first?.description {
+                    self.descriptionWeather.text = description
+                } else {
+                    self.descriptionWeather.text = "pas de données serveur"
+                }
 
             case let .failure(error):
                 let alertVC = UIAlertController(title: "Erreur", message: error.message, preferredStyle: .alert)
