@@ -28,6 +28,8 @@ class WeatherViewController: UIViewController {
         } else {
             citiesSegmented.tintColor = UIColor(named: "Jaune")!
         }
+        
+        // This function is called in viewDidLoad to ask the model the weather information of the current selected city. By default, the index is 0, which in the model coresponds to Nantes.
         citySwitched(citiesSegmented)
     }
     
@@ -52,6 +54,7 @@ class WeatherViewController: UIViewController {
                 self.maxTemperature.text = "\(response.main.temp_max)ºC"
                 self.humidity.text = "\(response.main.humidity)%"
                 
+                // Use of type safe first API in case of the weather array is empty, displaying a default text on that case
                 if let description = response.weather.first?.description {
                     self.descriptionWeather.text = description
                 } else {
