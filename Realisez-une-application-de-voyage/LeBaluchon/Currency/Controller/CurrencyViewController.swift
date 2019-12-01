@@ -12,10 +12,10 @@ class CurrencyViewController: UIViewController {
     
     let converter = CurrencyConverter()
     
-    @IBOutlet weak var amountToExchange: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var goButton: UIButton!
-    @IBOutlet weak var amountExchanged: UILabel!
+    @IBOutlet var amountToExchange: UITextField!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var goButton: UIButton!
+    @IBOutlet var amountExchanged: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,6 @@ class CurrencyViewController: UIViewController {
         
         converter.convert(from: amountToExchange.text ?? "") { (result) in
             self.toggleActivityIndicator(shown: false)
-            print(result)
-            
             switch result {
             case let .success(usdValue):
                 let value = self.convertDoubleToCurrency(amount: usdValue, locale: Locale(identifier: "en_US"))

@@ -10,10 +10,10 @@ import UIKit
 
 class TranslateViewController: UIViewController {
     
-    @IBOutlet weak var inputTextView: UITextView!
-    @IBOutlet weak var outputTextView: UITextView!
-    @IBOutlet weak var goButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var inputTextView: UITextView!
+    @IBOutlet var outputTextView: UITextView!
+    @IBOutlet var goButton: UIButton!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     let translation = Translation()
     
@@ -24,9 +24,7 @@ class TranslateViewController: UIViewController {
     @IBAction func tappedGoButton(_ sender: Any) {
         view.endEditing(true)
         
-        translation.request(from: inputTextView.text) { (result) in
-            print(result)
-            
+        translation.request(from: inputTextView.text) { (result) in            
             switch result {
             case let .success(translatedText):
                 self.outputTextView.text = translatedText

@@ -12,13 +12,13 @@ class WeatherViewController: UIViewController {
     
     let weatherModel = Weather()
     
-    @IBOutlet weak var citiesSegmented: UISegmentedControl!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var descriptionWeather: UILabel!
-    @IBOutlet weak var currentTemperature: UILabel!
-    @IBOutlet weak var minTemperature: UILabel!
-    @IBOutlet weak var maxTemperature: UILabel!
-    @IBOutlet weak var humidity: UILabel!
+    @IBOutlet var citiesSegmented: UISegmentedControl!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var descriptionWeather: UILabel!
+    @IBOutlet var currentTemperature: UILabel!
+    @IBOutlet var minTemperature: UILabel!
+    @IBOutlet var maxTemperature: UILabel!
+    @IBOutlet var humidity: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
