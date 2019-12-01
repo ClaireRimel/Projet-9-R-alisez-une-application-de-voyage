@@ -64,7 +64,11 @@ class Translation {
             
             // if both condition above are satisfied, it provides an instance of LatestWeatherResponse object, which reprensents the response received from the server, along with the Result's success case back to the caller
             DispatchQueue.main.async {
-                then(.success(responseJSON.data.translations[0].translatedText))
+                if let translatedText = responseJSON.data.translations.first?.translatedText {
+                     then(.success(translatedText))
+                } else {
+                     then(.failure(.invalidResponseFormat))
+                }
             }
         })
         task.resume()
