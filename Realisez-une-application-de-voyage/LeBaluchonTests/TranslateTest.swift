@@ -93,6 +93,24 @@ class TranslateTest: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
+    func testInvalidResponseFormatIfNoTranslationsInArray() {
+        // Given
+        let input = "Hola"
+        let expectation = self.expectation(description: "")
+        
+        let dataResponse = DataResponse(translations: [])
+        requestMock.response = LatestTranslationResponse(data: dataResponse)
+        
+        // When
+        sut.request(from: input, then: { (result) in
+            // Then
+            XCTAssertEqual(result, .failure(.invalidResponseFormat))
+            expectation.fulfill()
+        })
+        //wait...
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
     func testRequestsData() {
         // Given
         let input = "Bonjour"
@@ -116,6 +134,8 @@ class TranslateTest: XCTestCase {
         XCTAssertEqual(urlComponents?.queryItems?[2], URLQueryItem(name: "format", value: "text"))
         XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "key", value: apiKeyMock))
     }
+    
+    
 }
 
 extension TranslateTest {
