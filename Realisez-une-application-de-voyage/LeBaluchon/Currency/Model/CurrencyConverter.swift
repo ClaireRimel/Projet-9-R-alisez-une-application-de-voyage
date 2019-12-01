@@ -21,7 +21,7 @@ class CurrencyConverter {
     
     let apiKey: String
     
-    // Default argument in function
+    // Default arguments in function
     init(session: RequestInterface = URLSession.shared,
          apiKey: String = APIKeys.currency) {
         self.session = session
@@ -37,7 +37,7 @@ class CurrencyConverter {
                 return
         }
         
-        // Verify if the latest request was made the same day, to convert with the lastest rate recived, or if not, to process to a new request 
+        // Verify if the latest request was made the same day, to do the conversion with the latest known rate received, otherwise, to process to a new request
         if let latestRateAndDate = latestRateAndDate, wasRequestMadeToday(requestDate: latestRateAndDate.requestDate) {
             
             let usdValue = value * latestRateAndDate.usdRate
@@ -49,7 +49,7 @@ class CurrencyConverter {
         }
     }
     
-    // Use of URLComponents to construct the URL with the require parameters to request to fixer API info about a currency
+    // Use of URLComponents to construct the URL with the required parameters to request to fixer API info about a currency
     func request(from: Double, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
         var urlComponents = URLComponents()
@@ -107,7 +107,7 @@ class CurrencyConverter {
         task.resume()
     }
     
-    // Use to format the date and compare it with the latest date
+    // Use to format today's date and compare it with a given date
     func wasRequestMadeToday(requestDate: String) -> Bool {
         let date = Date()
         let format = DateFormatter()

@@ -14,7 +14,7 @@ class Weather {
     
     let apiKey: String
     
-    // Default argument in function
+    // Default arguments in function
     init(session: RequestInterface = URLSession.shared,
          apiKey: String = APIKeys.weather) {
         self.session = session
@@ -33,7 +33,7 @@ class Weather {
             citySelected = "nantes,fr"
         }
         
-        // Use of URLComponents to construct the URL with the require parameters to request to openweathermap API weather info about a city
+        // Use of URLComponents to construct the URL with the required parameters to request to openweathermap API weather info about a city
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
@@ -45,7 +45,7 @@ class Weather {
                                     URLQueryItem(name: "units", value: "metric"),
                                     URLQueryItem(name: "APPID", value: apiKey)]
         
-        // If this fail, it's because a programming error -> wrong URL
+        // If this fails, it's because a programming error -> wrong URL
         guard let url = urlComponents.url else {
             fatalError("Invalid URL")
         }

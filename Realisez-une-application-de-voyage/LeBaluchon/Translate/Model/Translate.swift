@@ -14,14 +14,14 @@ class Translation {
     
     let apiKey: String
     
-    // Default argument in function
+    // Default arguments in function
     init(session: RequestInterface = URLSession.shared,
          apiKey: String = APIKeys.translation) {
         self.session = session
         self.apiKey = apiKey
     }
     
-    // Use of URLComponents to construct the URL with the require parameters to request to Google API translation
+    // Use of URLComponents to construct the URL with the required parameters to request to Google API translation
     func request(from: String, then: @escaping (Result<String, TranslationError>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
