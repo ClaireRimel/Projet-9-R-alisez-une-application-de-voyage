@@ -22,7 +22,8 @@ class Weather {
     }
     
     func request(from: String, then: @escaping (Result<LatestWeatherResponse, WeatherError>) -> Void) {
-                
+          
+        // Use of URLComponents to construct the URL with the require parameters to request to openweathermap API weather info about a city
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
@@ -39,13 +40,13 @@ class Weather {
             fatalError("Invalid URL")
         }
         
+        // Sets the request as GET
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        
-        
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
             
+            // Verifies if the request threw an error
             if let error = error as NSError? {
                 DispatchQueue.main.async {
                     then(.failure(.requestError(error)))
@@ -53,6 +54,7 @@ class Weather {
                 return
             }
             
+            // Verifies that the received JSON in the server response has a format that we expect
             guard let data = data,
                 let responseJSON = try? JSONDecoder().decode(LatestWeatherResponse.self, from: data) else {
                     DispatchQueue.main.async {
@@ -60,7 +62,8 @@ class Weather {
                     }
                     return
             }
-            print(responseJSON)
+            
+            // if both condition above are satisfied, it provides an instance of LatestWeatherResponse object, which reprensents the response received from the server, along with the Result's success case back to the caller
             DispatchQueue.main.async {
                 then(.success(responseJSON))
             }

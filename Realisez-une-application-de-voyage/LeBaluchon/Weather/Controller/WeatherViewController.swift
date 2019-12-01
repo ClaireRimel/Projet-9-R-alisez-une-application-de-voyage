@@ -22,7 +22,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var maxTemperature: UILabel!
     @IBOutlet weak var humidity: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,9 +58,6 @@ class WeatherViewController: UIViewController {
                 
                 let formattedDate = dateFormatter.string(from: date)
                 
-                print(formattedDate)
-                print(response)
-                
                 self.date.text = "\(formattedDate)"
                 self.descriptionWeather.text = "\(response.weather[0].description)"
                 self.currentTemperature.text = "\(response.main.temp)ºC"
@@ -78,4 +74,3 @@ class WeatherViewController: UIViewController {
         }
     }
 }
-
