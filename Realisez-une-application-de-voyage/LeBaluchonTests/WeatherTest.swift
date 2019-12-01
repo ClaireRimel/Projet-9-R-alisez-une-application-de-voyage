@@ -98,9 +98,47 @@ class WeatherTest: XCTestCase {
         XCTAssertEqual(urlComponents?.queryItems?[3], URLQueryItem(name: "units", value: "metric"))
         XCTAssertEqual(urlComponents?.queryItems?[4], URLQueryItem(name: "APPID", value: apiKeyMock))
     }
+    
+    func testIndexZeroRequestsNantesWeatherInfo() {
+        // Given
+        let index = 0
+        
+        // When
+        sut.request(from: index) {_ in}
+        
+        // Then
+        let url = requestMock.request?.url?.absoluteString
+        let urlComponents = URLComponents(string: url!)
+        XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: "nantes,fr"))
+    }
+    
+    func testIndexOneRequestsNewYorkWeatherInfo() {
+        // Given
+        let index = 1
+        
+        // When
+        sut.request(from: index) {_ in}
+        
+        // Then
+        let url = requestMock.request?.url?.absoluteString
+        let urlComponents = URLComponents(string: url!)
+        XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: "new york,us"))
+    }
+    
+    func testByDefaultRequestsNantesWeatherInfo() {
+        // Given
+        for i in 2...100 {
+            
+            // When
+            sut.request(from: i) {_ in}
+            
+            // Then
+            let url = requestMock.request?.url?.absoluteString
+            let urlComponents = URLComponents(string: url!)
+            XCTAssertEqual(urlComponents?.queryItems?[0], URLQueryItem(name: "q", value: "nantes,fr"))
+        }
+    }
 }
-
-
 
 extension WeatherTest {
     
