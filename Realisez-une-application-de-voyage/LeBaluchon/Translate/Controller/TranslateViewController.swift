@@ -29,9 +29,7 @@ class TranslateViewController: UIViewController {
             case let .success(translatedText):
                 self.outputTextView.text = translatedText
             case let .failure(error):
-                let alertVC = UIAlertController(title: "Erreur", message: error.message, preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.present(alertVC, animated: true, completion: nil)
+                self.presentUIAlert(message: error.message)
             }
         }
     }
